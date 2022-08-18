@@ -1,0 +1,5 @@
+#!/usr/bin/fish
+while true
+    update_dwmbar
+    sleep 1s
+end

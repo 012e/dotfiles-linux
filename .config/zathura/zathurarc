@@ -1,0 +1,9 @@
+set scroll-step 300
+unmap normal j
+unmap normal k
+unmap normal u
+unmap normal d
+map u scroll half-up
+map d scroll half-down
+map k scroll up
+map j scroll down

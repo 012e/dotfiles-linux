@@ -1,0 +1,4 @@
+#! /usr/bin/sh
+pamixer --unmute
+pamixer --set-volume 100
+xsetroot -name "reset"

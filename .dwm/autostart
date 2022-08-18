@@ -1,0 +1,26 @@
+#!/usr/bin/fish
+set -l DWM "$HOME/.dwm/"
+
+imwheel &
+dunst &
+
+# Screen relusion
+xrandr -s 1920x1080
+
+# Kill all tmux sessions
+# tmux kill-server
+
+# rebinds
+setxkbmap -option caps:swapescape # swap esc <> caps
+setxkbmap -option altwin:swap_alt_win # swap alt <> meta
+setxkbmap -option ctrl:menu_rctrl
+xmodmap -e "keycode 105 = Menu"
+
+# apply Xresources
+# xrdb $DWM/Xresources
+
+# keyboard rate: 150 delay + 40hz
+xset r rate 150 40
+
+# dwm bar
+$DWM/dwmbar &

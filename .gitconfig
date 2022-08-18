@@ -1,0 +1,16 @@
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[user]
+	email = huyphmnhat@gmail.com
+	name = 012e
+[alias]
+	fixc = commit --ammend
+  lastc = log -1 HEAD --stat
+  searchc = !git rev-list --all | xargs git grep -F
+[core]
+	pager = delta --line-numbers
+  excludesFile = ~/.gitignore

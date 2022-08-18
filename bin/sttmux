@@ -1,0 +1,6 @@
+#!/usr/bin/fish
+if count $argv > /dev/null
+    st fish -c "tmux new-session -s $fish_pid && $argv"
+else
+    st fish -c "tmux new-session -s $fish_pid"
+end
