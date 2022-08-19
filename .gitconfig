@@ -11,6 +11,12 @@
 	fixc = commit --ammend
   lastc = log -1 HEAD --stat
   searchc = !git rev-list --all | xargs git grep -F
+  s = status
+  l = log
+  c = commit
+  d = diff
 [core]
 	pager = delta --line-numbers
   excludesFile = ~/.gitignore
+[color]
+	ui = auto
