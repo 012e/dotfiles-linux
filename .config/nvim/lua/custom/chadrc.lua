@@ -10,6 +10,7 @@ M.plugins = {
   remove = {
     "folke/which-key.nvim",
     "NvChad/nvterm",
+    "windwp/nvim-autopairs",
   },
   user = {
     ["tpope/vim-repeat"] = {},

@@ -101,6 +101,7 @@ M.mason = {
     "goimports", -- formatter
 
     "shfmt",
+    "shellcheck",
   },
 }
 
