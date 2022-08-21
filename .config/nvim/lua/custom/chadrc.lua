@@ -14,6 +14,7 @@ M.plugins = {
   },
   user = {
     ["tpope/vim-repeat"] = {},
+    ["tpope/vim-surround"] = {},
     ["mbbill/undotree"] = {},
     ["mrjones2014/smart-splits.nvim"] = {},
     ["luukvbaal/stabilize.nvim"] = {
@@ -61,12 +62,6 @@ M.plugins = {
       after = "nvim-lspconfig",
       config = function()
         require "custom.plugins.null-ls"
-      end,
-    },
-    ["kylechui/nvim-surround"] = {
-      events = { "BufRead", "BufNewFile" },
-      config = function()
-        require("nvim-surround").setup {}
       end,
     },
     ["neovim/nvim-lspconfig"] = {
