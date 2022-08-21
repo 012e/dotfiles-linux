@@ -1,5 +1,49 @@
-#!/usr/bin/fish
-while true
-    update_dwmbar
-    sleep 1s
-end
+#!/bin/sh
+mydate() {
+	echo " $(date "+%a %d/%m %T")"
+}
+
+volume() {
+	volume=$(pamixer --get-volume)
+	muted=$(pamixer --get-mute)
+	if [ "$muted" = "true" ]; then
+		echo "muted"
+		return 0
+	fi
+	if [ "$volume" -le 33 ]; then
+		echo "奄 $volume"
+	elif [ "$volume" -le 66 ]; then
+		echo "奔 $volume"
+	else
+		echo "墳 $volume"
+	fi
+}
+
+ram_usage() {
+	free -m | grep '^Mem' | awk '{print $3"MB"}'
+}
+
+cpu_temp() {
+	echo $(sensors -u | rg temp1_input | awk -c 'NR==1{sub(/\..*/,""); print$2}')C
+}
+
+cpu_usage() {
+	top -bn1 | rg "Cpu" |
+		sed "s/.*, *\([0-9.]*\)%* id.*/\1/" |
+		awk '{print 100 - $1"%"}'
+}
+
+update_dwmbar() {
+	bar="|  \
+"$(cpu_usage)" \
+"$(cpu_temp)" \
+"$(ram_usage)" | \
+"$(volume)" | \
+"$(mydate)" |"
+	xsetroot -name "$bar"
+}
+
+while true; do
+	update_dwmbar
+	sleep 1s
+done

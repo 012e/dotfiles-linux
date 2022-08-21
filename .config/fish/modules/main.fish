@@ -14,7 +14,7 @@ _env_var MANPAGER "sh -c 'col -bx | bat -l man -p'"
 _env_var XDG_DOWNLOAD_DIR "$HOME/files"
 
 # Dependencies
-_import exa pacman syspower keybindings nvim fzf git dwmbar z
+_import exa pacman syspower keybindings nvim fzf git z
 
 # Starups
 starship init fish | source
