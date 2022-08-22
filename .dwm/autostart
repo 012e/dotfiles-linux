@@ -1,17 +1,20 @@
-#!/usr/bin/fish
-set -l DWM "$HOME/.dwm/"
+#!/usr/bin/sh
+DWM="$HOME/.dwm/"
+
+google-chrome-stable &
 
 imwheel &
 dunst &
 
 # Screen relusion
 xrandr -s 1920x1080
+feh --bg-fill $DWM/bg.jpg
 
 # Kill all tmux sessions
 # tmux kill-server
 
 # rebinds
-setxkbmap -option caps:swapescape # swap esc <> caps
+setxkbmap -option caps:swapescape     # swap esc <> caps
 setxkbmap -option altwin:swap_alt_win # swap alt <> meta
 setxkbmap -option ctrl:menu_rctrl
 xmodmap -e "keycode 105 = Menu"
