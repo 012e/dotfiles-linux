@@ -382,6 +382,9 @@
 
 # Disable the transient hint so that idle_threshold cannot be bypassed from the
 # client
+[notify_sound]
+  summary = "*"
+  script = notifysound
 #[transient_disable]
 #    match_transient = yes
 #    set_transient = no
