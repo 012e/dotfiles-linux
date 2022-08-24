@@ -98,7 +98,7 @@ static Key keys[] = {
 	// dwm shortcuts (stack, moving around)
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
-	{ MODKEY,                       XK_Escape,      focusstack,     {.i = +1 } },
+	{ MODKEY,                       XK_Escape, swapfocus,      {0} },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
