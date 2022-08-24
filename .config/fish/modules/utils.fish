@@ -18,3 +18,7 @@ function _argv_exist
     echo (count $argv > /dev/null)
     return (count $argv > /dev/null)
 end
+
+function _alias
+    abbr --add -g $argv[1] $argv[2..-1]
+end

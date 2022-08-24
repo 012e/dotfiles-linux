@@ -1,8 +1,3 @@
-if status --is-interactive
-  if test -z "$DISPLAY" -a $XDG_VTNR = 1
-    exec startx -- -keeptty
-  end
-end
 source $HOME/.config/fish/modules/utils.fish
 
 fish_default_key_bindings
@@ -23,9 +18,7 @@ set fish_greeting
 # Random useful things 
 # aliases/functions
 
-alias rip="killall"
-alias ...="cd ../../"
-
-# prevent script to die on terminal close
-
+_alias rip "killall"
+_alias ... "cd ../../"
+_alias .... "cd ../../../"
 trap "tmux kill-session -t $fish_pid; tmux kill-session -t popup$fish_pid" EXIT

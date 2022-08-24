@@ -1,5 +1,3 @@
-alias v=nvim
-function vs
-end
-alias sv="sudo nvim"
-alias vy="nvim +PackerSync"
+_alias v nvim
+_alias sv "sudo nvim"
+_alias vy "nvim +PackerSync"

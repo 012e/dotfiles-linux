@@ -1,4 +1,4 @@
-alias shutdown="sudo shutdown now"
-alias poweroff=shutdown
-alias suspend="sudo systemctl suspend"
-alias reboot="sudo reboot"
+_alias shutdown "sudo shutdown now"
+_alias poweroff shutdown
+_alias suspend "sudo systemctl suspend"
+_alias reboot "sudo reboot"

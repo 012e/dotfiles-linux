@@ -1,3 +1,4 @@
+# not using abbr (_alias) because it's simply too long, doesn't like it
 alias ls="exa --classify --long	--grid --icons --grid \
 	--no-permissions --no-user --group-directories-first"
 alias l="ls"

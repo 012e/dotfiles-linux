@@ -1,4 +1,4 @@
-alias II="sudo pacman -S --needed"
-alias RR="sudo pacman -Rs"
-alias UU="sudo pacman -Syyu"
-alias CC="sudo pacman -Rs (pacman -Qtdq)"
+_alias II "sudo pacman -S --needed"
+_alias RR "sudo pacman -Rs"
+_alias UU "sudo pacman -Syyu"
+_alias CC "sudo pacman -Rs (pacman -Qtdq)"
