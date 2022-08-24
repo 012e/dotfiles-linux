@@ -14,15 +14,27 @@ set.tabstop = 2
 set.shiftwidth = 2
 set.softtabstop = 0
 set.autoindent = true
-set.cmdheight = 1
 
+-- ui related
+set.cmdheight = 0
+set.laststatus = 0
+set.titlestring = "%t%m%r (%F) [%l/%L]"
 set.relativenumber = true
 vim.cmd("set colorcolumn=80")
+
+when("BufWinEnter", {
+	pattern = "*",
+	callback = function()
+		set.laststatus = 0
+	end,
+})
 
 -- Auto format
 when("BufWritePre", {
 	callback = function()
-		vim.lsp.buf.format()
+		if vim.inspect(vim.lsp.get_active_clients()) ~= "{}" then
+			vim.lsp.buf.format()
+		end
 	end,
 })
 

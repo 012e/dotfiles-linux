@@ -4,6 +4,11 @@ local M = {}
 
 M.ui = {
 	theme = "gruvbox",
+	hl_override = {
+		CursorLine = {
+			bg = "one_bg",
+		},
+	},
 }
 
 M.plugins = {

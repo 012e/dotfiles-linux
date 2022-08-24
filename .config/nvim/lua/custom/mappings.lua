@@ -312,12 +312,12 @@ M.general = {
 		["dd"] = { smartdd, "" },
 		["<C-S-P>"] = {
 			function()
-				vim.opt.winbar = "%f"
+				vim.opt.winbar = "%F"
 				vim.defer_fn(function()
 					vim.opt.winbar = ""
 				end, 4000)
 			end,
-			"open full path",
+			"show full path",
 		},
 		["<F29>"] = {
 			function()
@@ -328,7 +328,7 @@ M.general = {
 					vim.opt.winbar = ""
 				end, 5000)
 			end,
-			"toggle global clipboard",
+			"enable global clipboard for 5s",
 		},
 	},
 	i = {

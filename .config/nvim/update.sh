@@ -13,7 +13,6 @@ gh repo clone 012e/nvchad /tmp/NvChad
 
 # copy files
 cp $temp/init.lua $dest/ -r
-cp $temp/.stylua.toml $dest/ -r
 cp $temp/lua/core $dest/lua/ -r
 cp $temp/lua/plugins $dest/lua/ -r
 
@@ -32,5 +31,5 @@ else
 	echo "not updated" >./changelog.txt
 fi
 
-# update packer_compile
-nvim -c PackerSync
+# update packer_compile, open change log (readonly)
+nvim +PackerSync -R changelog.txt

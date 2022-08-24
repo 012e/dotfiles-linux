@@ -57,6 +57,6 @@ lspconfig.elixirls.setup({
 
 vim.diagnostic.config({
 	virtual_text = {
-		prefix = " ",
+		prefix = "",
 	},
 })
