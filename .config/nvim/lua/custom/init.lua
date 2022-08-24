@@ -14,7 +14,7 @@ set.tabstop = 2
 set.shiftwidth = 2
 set.softtabstop = 0
 set.autoindent = true
--- set.cmdheight = 0
+set.cmdheight = 1
 
 set.relativenumber = true
 vim.cmd("set colorcolumn=80")
@@ -22,7 +22,7 @@ vim.cmd("set colorcolumn=80")
 -- Auto format
 when("BufWritePre", {
 	callback = function()
-		vim.lsp.buf.formatting_seq_sync()
+		vim.lsp.buf.format()
 	end,
 })
 

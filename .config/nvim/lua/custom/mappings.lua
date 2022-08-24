@@ -154,15 +154,33 @@ M.pane = {
 			"move cursor down (pane)",
 		},
 		-- ["<C-k>"] = { "<C-w>k", "move to next pane on right" },
-		["<C-S-H>"] = { "<cmd>SmartResizeLeft 5<cr>", "" },
-		["<C-S-L>"] = { "<cmd>SmartResizeRight 5<cr>", "" },
-		["<C-S-K>"] = { "<cmd>SmartResizeDown 5<cr>", "" },
-		["<C-S-J>"] = { "<cmd>SmartResizeUp 5<cr>", "" },
+		["<M-C-H>"] = { "<cmd>SmartResizeLeft 5<cr>", "" },
+		["<M-C-L>"] = { "<cmd>SmartResizeRight 5<cr>", "" },
 	},
 }
 
 M.lsp = {
 	n = {
+		["<F2>"] = {
+			'<cmd>lua require("nvchad_ui.renamer").open() <cr>',
+			"rename variable",
+		},
+		['<C-S-">'] = {
+			function()
+				vim.diagnostic.goto_next()
+				vim.diagnostic.open_float()
+			end,
+			"go to next diagnostic",
+		},
+		["<C-'>"] = {
+			function()
+				vim.diagnostic.goto_prev()
+				vim.diagnostic.open_float()
+			end,
+			"go to previous diagnostic",
+		},
+	},
+	i = {
 		["<F2>"] = {
 			'<cmd>lua require("nvchad_ui.renamer").open() <cr>',
 			"rename variable",
@@ -276,6 +294,14 @@ M.dap = {
 	},
 }
 
+M.insert_editing = {
+	i = {
+		["<M-[>"] = { [[{
+}<ESC>O]], "new bracket new line" },
+		["<M-p>"] = { "<C-r>*", "paste" },
+	},
+}
+
 M.general = {
 	n = {
 		["<C-s>"] = { "<cmd>w<cr>", "save file" },
@@ -302,13 +328,12 @@ M.general = {
 					vim.opt.winbar = ""
 				end, 5000)
 			end,
-			"toggle clipboard",
+			"toggle global clipboard",
 		},
 	},
 	i = {
 		["<C-s>"] = { "<cmd> w <cr>", "save file" },
 		["<C-Return>"] = { "<ESC>o", "new line" },
-		["<C-a>"] = { "<ESC>^i", "go to begin of line" },
 	},
 	v = {
 		["<C-s>"] = { "<cmd> write <cr>.", "save file" },
