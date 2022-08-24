@@ -1,17 +1,14 @@
 #!/usr/bin/sh
 DWM="$HOME/.dwm/"
 
-google-chrome-stable &
-
 imwheel &
 dunst &
 
 # Screen relusion
-xrandr -s 1920x1080
-feh --bg-fill $DWM/bg.jpg
+xrandr -s 1920x1080 &
 
-# Kill all tmux sessions
-# tmux kill-server
+# services
+sudo systemctl start docker.service &
 
 # rebinds
 setxkbmap -option caps:swapescape     # swap esc <> caps
@@ -19,11 +16,12 @@ setxkbmap -option altwin:swap_alt_win # swap alt <> meta
 setxkbmap -option ctrl:menu_rctrl
 xmodmap -e "keycode 105 = Menu"
 
-# apply Xresources
-# xrdb $DWM/Xresources
-
 # keyboard rate: 150 delay + 40hz
-xset r rate 150 40
+xset r rate 150 40 &
 
 # dwm bar
 $DWM/dwmbar &
+
+google-chrome-stable &
+sleep 10s
+feh --bg-fill $DWM/bg.jpg
