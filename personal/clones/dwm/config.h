@@ -70,10 +70,12 @@ static const char *termcmd[]  = { "sttmux", NULL };
 
 // Volume controls
 static const char *pavucontrol[] = { "pavucontrol", NULL };
-static const char *volumeup[] =    { "volumeup", "NULL"};
-static const char *volumedown[] =  { "volumedown", "NULL"};
-static const char *resetvolume[] = { "volumereset", "NULL"};
-static const char *mutevolume[] =  { "volumemute", "NULL"};
+static const char *volumeup[] =    { "volumeup", "NULL" };
+static const char *volumedown[] =  { "volumedown", "NULL" };
+static const char *resetvolume[] = { "volumereset", "NULL" };
+static const char *mutevolume[] =  { "volumemute", "NULL" };
+
+static const char *flameshotcmd[] = { "screenshot", "NULL" };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -89,9 +91,13 @@ static Key keys[] = {
 	{ MODKEY,                       XK_p,      spawn,          {.v = roficmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 
+	// flameshot
+	{ MODKEY,                       XK_Print,  spawn,          {.v = flameshotcmd } },
+
 	// dwm shortcuts (stack, moving around)
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
+	{ MODKEY,                       XK_Escape,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
