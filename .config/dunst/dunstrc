@@ -384,7 +384,7 @@
 # client
 [notify_sound]
   summary = "*"
-  script = notifysound
+  script = sound
 #[transient_disable]
 #    match_transient = yes
 #    set_transient = no

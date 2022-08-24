@@ -1,2 +1,0 @@
-#!/bin/sh
-mpv $HOME/bin/notify.mp3 &

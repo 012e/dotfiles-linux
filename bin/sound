@@ -1,4 +1,2 @@
 #!/bin/sh
-
-# For testing sound
-mpv --no-video --really-quiet $HOME/bin/pop.aiff &
+mpv $HOME/bin/notify.mp3 &
