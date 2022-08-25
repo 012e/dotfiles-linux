@@ -310,22 +310,13 @@ M.general = {
 		["<C-d>"] = { "<C-d>zz", "" },
 		["U"] = { "<cmd> UndotreeToggle<cr>", "" },
 		["dd"] = { smartdd, "" },
-		["<C-S-P>"] = {
-			function()
-				vim.opt.winbar = "%F"
-				vim.defer_fn(function()
-					vim.opt.winbar = ""
-				end, 4000)
-			end,
-			"show full path",
-		},
 		["<F29>"] = {
 			function()
 				vim.opt.clipboard = "unnamedplus"
 				vim.opt.winbar = "global clipboard"
 				vim.defer_fn(function()
 					vim.opt.clipboard = "unnamed"
-					vim.opt.winbar = ""
+					vim.opt.winbar = "%F"
 				end, 5000)
 			end,
 			"enable global clipboard for 5s",

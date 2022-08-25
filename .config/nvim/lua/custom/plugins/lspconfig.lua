@@ -25,16 +25,6 @@ for _, lsp in ipairs(servers) do
 	})
 end
 
-lspconfig.sumneko_lua.setup({
-	settings = {
-		Lua = {
-			diagnostics = {
-				globals = { "vim" },
-			},
-		},
-	},
-})
-
 lspconfig.elixirls.setup({
 	cmd = {
 		"/srv/home/.local/share/nvim/mason/packages/elixir-ls/language_server.sh",
