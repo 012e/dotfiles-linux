@@ -9,7 +9,7 @@ gh repo sync 012e/nvchad -b main
 # download fork
 rm -rf /tmp/NvChad
 echo "cloning the fork"
-gh repo clone 012e/nvchad /tmp/NvChad
+gh repo clone nvchad/nvchad /tmp/NvChad
 
 # copy files
 cp $temp/init.lua $dest/ -r
