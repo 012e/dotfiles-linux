@@ -1,6 +1,12 @@
 #!/bin/sh
 mydate() {
-	echo " $(date "+%a %d/%m %T")"
+	echo "$(date "+%a %d/%m %T")"
+}
+
+battery() {
+	battery0=$(cat /sys/class/power_supply/BAT0/capacity)
+	battery1=$(cat /sys/class/power_supply/BAT1/capacity)
+	echo $(((battery0 + battery1) / 2))
 }
 
 volume() {
@@ -34,12 +40,13 @@ cpu_usage() {
 }
 
 update_dwmbar() {
-	bar="|  \
+	bar="| \
 "$(cpu_usage)" \
 "$(cpu_temp)" \
 "$(ram_usage)" | \
 "$(volume)" | \
-"$(mydate)" |"
+"$(mydate)" | \
+"$(battery)" |"
 	xsetroot -name "$bar"
 }
 
