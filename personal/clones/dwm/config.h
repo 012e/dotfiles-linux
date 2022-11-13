@@ -10,8 +10,8 @@ static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display 
 static const int showsystray        = 1;     /* 0 means no systray */
 static const int showbar            = 1;     /* 0 means no bar */
 static const int topbar             = 1;     /* 0 means bottom bar */
-static const char *fonts[]          = { "JetbrainsMono Nerd Font:size=13.5", "NotoColorEmoji:pixelsize=15:antialias=true:autohint=true"  };
-static const char dmenufont[]       = "JetbrainsMono Nerd Font:size=24";
+static const char *fonts[]          = { "Iosevka Nerd Font:size=13.5", "NotoColorEmoji:pixelsize=15:antialias=true:autohint=true"  };
+static const char dmenufont[]       = "Iosevka Nerd Font:size=24";
 static const char col_gray1[]       = "#282828";
 static const char col_gray2[]       = "#504945";
 static const char col_gray3[]       = "#bdae93";
@@ -77,6 +77,7 @@ static const char *resetvolume[] = { "volumereset", "NULL" };
 static const char *mutevolume[] =  { "volumemute", "NULL" };
 
 static const char *flameshotcmd[] = { "screenshot", "NULL" };
+static const char *togglek12[] = { "toggle-k12", "NULL" };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -90,6 +91,7 @@ static Key keys[] = {
 
 	// terminal/dmenu
 	{ MODKEY,                       XK_p,      spawn,          {.v = roficmd } },
+	{ MODKEY,                       XK_a,      spawn,          {.v = togglek12 } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 
 	// flameshot

@@ -19,7 +19,7 @@ set.autoindent = true
 set.cmdheight = 0
 set.laststatus = 0
 set.titlestring = "%t%m%r [%l/%L]"
-set.winbar = "%F"
+-- set.winbar = "%F"
 set.relativenumber = true
 vim.cmd("set colorcolumn=80")
 
