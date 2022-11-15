@@ -1,0 +1,11 @@
+[general]
+engines-order=['Bamboo', 'BambooUs']
+preload-engines=['BambooUs', 'Bamboo']
+version='1.5.27'
+
+[general/hotkey]
+triggers=@as []
+
+[panel/emoji]
+hotkey=@as []
+unicode-hotkey=@as []
