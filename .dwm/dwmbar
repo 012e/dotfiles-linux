@@ -6,6 +6,9 @@ mydate() {
 battery() {
 	battery0=$(cat /sys/class/power_supply/BAT0/capacity)
 	battery1=$(cat /sys/class/power_supply/BAT1/capacity)
+	if [[ "$(cat /sys/class/power_supply/AC/online)" == "1" ]]; then
+		echo -n C
+	fi
 	echo $(((battery0 + battery1) / 2))
 }
 
