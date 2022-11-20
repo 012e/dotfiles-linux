@@ -20,4 +20,4 @@ _alias rip "killall"
 _alias ... "cd ../../"
 _alias .... "cd ../../../"
 _alias pyenv "source ./venv/bin/activate.fish"
-trap "tmux kill-session -t $fish_pid; tmux kill-session -t popup$fish_pid" EXIT
+trap "begin tmux kill-session -t $fish_pid; tmux kill-session -t popup$fish_pid; end &> /dev/null" EXIT
