@@ -1,0 +1,10 @@
+#!/bin/sh
+# rm /tmp/ocr.png flameshot gui --accept-on-select --path=/tmp/ocr.png
+scrot --freeze --select /tmp/ocr.png -o
+tesseract -l vie+eng /tmp/ocr.png stdout | xclip -selection clipboard
+notify-send "OCR (tesseract)" "Copied text to clipboard"
+# Dependencies (arch)
+# flameshot
+# tesseract
+# tesseract-data-vie
+# tesseract-data-eng
