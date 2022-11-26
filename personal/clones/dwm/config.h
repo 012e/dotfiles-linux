@@ -79,10 +79,12 @@ static const char *resetvolume[] = { "volumereset", "NULL" };
 static const char *mutevolume[] =  { "volumemute", "NULL" };
 
 static const char *flameshotcmd[] = { "screenshot", "NULL" };
+static const char *ocr[] = { "ocr-to-clipboard", "NULL" };
 static const char *togglek12[] = { "toggle-k12", "NULL" };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
+
 
 	// volume control
 	{ MODKEY,                       XK_Pause,  spawn,          {.v = pavucontrol } },
@@ -91,6 +93,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Prior,  spawn,          {.v = volumeup } },
 	{ MODKEY,                       XK_Next,   spawn,          {.v = volumedown } },
 
+
+	// APPS
 	// terminal/dmenu
 	{ MODKEY,                       XK_p,      spawn,          {.v = roficmd } },
 	{ MODKEY,                       XK_a,      spawn,          {.v = togglek12 } },
@@ -98,11 +102,11 @@ static Key keys[] = {
 
 	// flameshot
 	{ MODKEY,                       XK_Print,  spawn,          {.v = flameshotcmd } },
+	// screenshot to ocr
+	{ MODKEY|ShiftMask,             XK_Print,  spawn,          {.v = ocr } },
 
-	// sticky windows
-	{ MODKEY,                       XK_s,      togglesticky,   {0} },
-
-	// dwm shortcuts (stack, moving around)
+	// DWM
+	// shortcuts (stack, moving around)
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_Escape, swapfocus,      {0} },
@@ -126,6 +130,9 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+
+	// sticky windows
+	{ MODKEY,                       XK_s,      togglesticky,   {0} },
 
 	// tag keys
 	TAGKEYS(                        XK_grave,                  0)

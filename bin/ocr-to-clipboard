@@ -1,5 +1,5 @@
 #!/bin/sh
-# rm /tmp/ocr.png flameshot gui --accept-on-select --path=/tmp/ocr.png
+set -e
 scrot --freeze --select /tmp/ocr.png -o
 tesseract -l vie+eng /tmp/ocr.png stdout | xclip -selection clipboard
 notify-send "OCR (tesseract)" "Copied text to clipboard"
