@@ -1,3 +1,3 @@
 #! /usr/bin/sh
 pamixer --mute
-xsetroot -name "muted"
+dwm-notify "muted"

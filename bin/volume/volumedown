@@ -2,4 +2,4 @@
 # probably used for the dwmbar
 pamixer --decrease 5 --allow-boost
 sound &
-xsetroot -name "$(volume)"
+dwm-notify "$(volume)"

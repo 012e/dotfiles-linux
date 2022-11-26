@@ -1,5 +1,5 @@
 #! /usr/bin/sh
 pamixer --unmute
 pamixer --set-volume 100
-xsetroot -name "reset"
-sound
+sound &
+dwm-notify "reset"
