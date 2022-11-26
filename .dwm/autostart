@@ -1,15 +1,7 @@
 #!/bin/sh
 DWM="$HOME/.dwm/"
 
-imwheel &
-dunst &
-
-# Screen relusion
-xrandr -s 1920x1080 &
-
-# services
-sudo systemctl start docker.service &
-
+/usr/lib/xfce4/notifyd/xfce4-notifyd &
 remapkey &
 
 # keyboard rate: 150 delay + 40hz
@@ -18,5 +10,5 @@ xset r rate 150 40 &
 # dwm bar
 $DWM/dwmbar &
 
-sleep 10s
-feh --bg-fill $DWM/bg.jpg
+# sleep 10s
+feh --bg-scale $DWM/bg.jpg
