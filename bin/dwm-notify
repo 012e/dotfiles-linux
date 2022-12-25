@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # pause dwmbar for 1 sec
 bar_pid=$(pgrep dwmbar)
 queue_name="dwmbar-queue$((1 + $RANDOM))"

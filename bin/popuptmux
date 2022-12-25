@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/bin/sh
 new_popup="tmux new -A -s popup$1"
 current_dir="$2"
 tmux popup -w 80% -h 80% -d "$current_dir" -E "$new_popup" >/dev/null

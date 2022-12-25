@@ -1,7 +1,7 @@
 require("custom/myplugs/session-manager")
 local when = vim.api.nvim_create_autocmd
 local set = vim.opt
-
+set.smartindent = false
 set.clipboard = "unnamed"
 
 --[[
@@ -18,10 +18,16 @@ set.autoindent = true
 -- ui related
 set.cmdheight = 0
 set.laststatus = 0
+set.title = true
 set.titlestring = "%t%m%r [%l/%L]"
--- set.winbar = "%F"
-set.relativenumber = true
+set.relativenumber = false
+set.number = false
 vim.cmd("set colorcolumn=80")
+when("TextYankPost", {
+	callback = function()
+		vim.highlight.on_yank({ higroup = "Visual", timeout = 1000 })
+	end,
+})
 
 when("BufWinEnter", {
 	pattern = "*",

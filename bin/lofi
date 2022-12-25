@@ -1,2 +1,6 @@
-#!/usr/bin/sh
-youtube-dl --quiet --no-warnings "https://www.youtube.com/watch?v=jfKfPfyJRdk" -f best -o - | mpv --no-video --really-quiet --volume=60 -
+#!/bin/sh
+youtube-dl --quiet --no-warnings "https://www.youtube.com/watch?v=jfKfPfyJRdk" -f best -o - |
+	mpv --no-video --really-quiet --volume=60 -
+# Dependencies (arch)
+# youtube-dl
+# mpv

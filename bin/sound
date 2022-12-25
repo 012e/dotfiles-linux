@@ -1,2 +1,4 @@
 #!/bin/sh
-mpv $HOME/bin/notify.mp3 &
+mpv $HOME/bin/notify.mp3 --really-quiet &
+# Dependencies
+# mpv
