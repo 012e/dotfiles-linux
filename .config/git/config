@@ -16,6 +16,5 @@
 	d = diff
 [core]
 	pager = delta --line-numbers
-	excludesFile = ~/.gitignore
 [color]
 	ui = auto
