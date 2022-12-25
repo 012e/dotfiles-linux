@@ -26,9 +26,6 @@ M.disabled = {
 	i = {
 		["<C-j>"] = "",
 		["<C-k>"] = "",
-		["<C-h>"] = "",
-		["<C-l>"] = "",
-		["<C-b>"] = "",
 	},
 }
 
@@ -114,27 +111,13 @@ M.clipboard = {
 	},
 }
 
--- M.move_line = {
---   n = {
---     ["<A-j>"] = { "<ESC>:m .+1<cr>==a", "move line up" },
---     ["<A-k>"] = { "<ESC>:m .-2<cr>==", "move line down" },
---   },
---   i = {
---     ["<A-j>"] = { "<ESC>:m .+1<cr>==a", "move line up" },
---     ["<A-k>"] = { "<ESC>:m .-2<cr>==a", "move line down" },
---   },
---   v = {
---     ["<A-j>"] = { ":m '>+1<cr>gv=gv", "move selection up" },
---     ["<A-k>"] = { ":m '<-2<cr>gv=gv", "move selection down" },
---   },
--- }
-
 M.buffers = {
 	n = {
 		["<C-h>"] = { "<cmd>bp<cr>", "previous buffer" },
 		["<C-l>"] = { "<cmd>bn<cr>", "next buffer " },
 	},
 }
+
 M.pane = {
 	n = {
 		["<M-h>"] = {
@@ -202,6 +185,29 @@ M.lsp = {
 	},
 }
 
+M.indent_with_tabs = {
+	n = {
+		["<tab>"] = {
+			">>",
+			"",
+		},
+		["<S-Tab>"] = {
+			"<<",
+			"",
+		},
+	},
+	v = {
+		["<tab>"] = {
+			">gv",
+			"",
+		},
+		["<S-Tab>"] = {
+			"<gv",
+			"",
+		},
+	},
+}
+
 M.l = {
 	n = {
 		[l("ld")] = {
@@ -234,22 +240,10 @@ M.l = {
 			end,
 			"show implementations",
 		},
+		[l("ll")] = { "<cmd> SymbolsOutline <cr>", "" },
 	},
 }
 
--- M.taskrunner = {
---   n = {
---     ["<space>tr"] = { "Telescope toggletasks spawn<cr>", "spawn a task runner" },
---     ["<space>ts"] = { "Telescope toggletasks select<cr>", "select a running task from task runner" },
---     ["<space>te"] = { "Telescope toggletasks edit<cr>", "edit the taskrunner tasks" },
---   },
--- }
-
--- vim.cmd [[
--- nnoremap <silent> <Plug>ToggleBreakPoint <cmd> lua require'dap'.toggle_breakpoint()<cr>
--- \:silent! call repeat#set("\<Plug>ToggleBreakPoint", v:count)<cr>
--- nmap <F9> <Plug>ToggleBreakPoint
--- ]]
 M.dap = {
 	n = {
 		["<F9>"] = {
@@ -316,7 +310,7 @@ M.general = {
 				vim.opt.winbar = "global clipboard"
 				vim.defer_fn(function()
 					vim.opt.clipboard = "unnamed"
-					vim.opt.winbar = "%F"
+					vim.opt.winbar = ""
 				end, 5000)
 			end,
 			"enable global clipboard for 5s",
@@ -325,6 +319,9 @@ M.general = {
 	i = {
 		["<C-s>"] = { "<cmd> w <cr>", "save file" },
 		["<C-Return>"] = { "<ESC>o", "new line" },
+		["<C-S-Return>"] = { "<ESC>O", "new line above" },
+		["<C-b>"] = { "<C-o>^", "move to begin of line" },
+		["<C-e>"] = { "<C-o>$", "move to end of line" },
 	},
 	v = {
 		["<C-s>"] = { "<cmd> write <cr>.", "save file" },

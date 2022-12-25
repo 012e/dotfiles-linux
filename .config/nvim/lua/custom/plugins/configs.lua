@@ -5,6 +5,7 @@ M.nvimtree = {
 		side = "right",
 	},
 }
+M.blankline = { show_current_context_start = false }
 
 M.telescope = function()
 	return {
