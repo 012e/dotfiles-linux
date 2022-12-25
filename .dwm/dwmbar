@@ -44,16 +44,18 @@ cpu_usage() {
 
 update_dwmbar() {
 	bar="| \
-"$(cpu_usage)" \
-"$(cpu_temp)" \
-"$(ram_usage)" | \
-"$(volume)" | \
+"$(cpu_usage &)" \
+"$(ram_usage &)" | \
+"$(volume &)" | \
 "$(mydate)" | \
-"$(battery)" |"
+"$(battery &)" |"
 	xsetroot -name "$bar"
 }
+sleep 0.$(printf '%04d' $((10000 - 10#$(date +%4N))))
 
 while true; do
-	update_dwmbar
+	if ! find /tmp/dwmbar-queue*; then
+		update_dwmbar
+	fi
 	sleep 1s
 done
