@@ -1,0 +1,9 @@
+#!/bin/sh
+DWM="$HOME/.dwm/"
+
+remapkey &
+imwheel &
+xrdb "$DWM/Xresources"
+
+# keyboard rate: 150 delay + 40hz
+xset r rate 150 40 &
