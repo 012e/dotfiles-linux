@@ -3,7 +3,7 @@ local gears = require("gears")
 local awful = require("awful")
 
 -- Create a textclock widget
-mytextclock = wibox.widget.textclock()
+local text_clock = wibox.widget.textclock('|%e/%m %H:%M')
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
@@ -50,6 +50,8 @@ awful.screen.connect_for_each_screen(function(s)
    -- Each screen has its own tag table.
    awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
 
+   s.mypromptbox = awful.widget.prompt()
+
    -- Create a taglist widget
    s.mytaglist = awful.widget.taglist {
        screen  = s,
@@ -65,7 +67,7 @@ awful.screen.connect_for_each_screen(function(s)
    }
 
    -- Create the wibox
-   s.mywibox = awful.wibar({ position = "top", screen = s , height = 25})
+   s.mywibox = awful.wibar({ position = "top", screen = s, height = mytheme.dpi(25)})
 
    -- Add widgets to the wibox
    s.mywibox:setup {
@@ -79,7 +81,7 @@ awful.screen.connect_for_each_screen(function(s)
        { -- Right widgets
            layout = wibox.layout.fixed.horizontal,
            wibox.widget.systray(),
-           mytextclock,
+           text_clock,
        },
    }
 end)

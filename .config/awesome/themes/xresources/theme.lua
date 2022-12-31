@@ -14,7 +14,7 @@ local themes_path = gfs.get_themes_dir()
 local theme = dofile(themes_path.."default/theme.lua")
 -- load vector assets' generators for this theme
 
-theme.font          = "Iosevka Nerd Font 16.6"
+theme.font          = "Iosevka Nerd Font " .. dpi(16)
 theme.dpi           = dpi
 
 theme.bg_normal     = xrdb.background

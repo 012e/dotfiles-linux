@@ -12,7 +12,8 @@ local themes_path = gfs.get_themes_dir()
 local theme = {}
 
 theme.font          = "Iosevka Nerd Font 16.6"
-theme.corner_radius = dpi(0)
+theme.corner_radius = dpi(10)
+theme.dpi           = dpi
 
 theme.bg_normal     = "#222222"
 theme.bg_focus      = "#535d6c"
@@ -28,7 +29,7 @@ theme.fg_minimize   = "#ffffff"
 theme.useless_gap   = dpi(4)
 theme.border_width  = dpi(1)
 theme.border_normal = "#000000"
-theme.border_focus  = "#535d6c"
+theme.border_focus  = "#36a3d9"
 theme.border_marked = "#91231c"
 
 -- There are other variable sets

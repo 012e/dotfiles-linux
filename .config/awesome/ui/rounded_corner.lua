@@ -1,5 +1,4 @@
 local gears = require("gears")
-local mytheme = require("global").theme
 
 client.connect_signal("manage", function (c)
     if not c.maximized then

@@ -1,9 +1,6 @@
 #!/bin/sh
-DWM="$HOME/.dwm/"
-
 remapkey &
 imwheel &
-# xrdb "$DWM/Xresources"
 sleep 5
 xcompmgr &
 

@@ -1,7 +1,7 @@
 local beautiful     = require("beautiful")
 local awful         = require("awful")
-local clientbuttons = require("mouse").clientbuttons
 local clientkeys    = require("keyboard").clientkeys
+local clientbuttons = require("mouse").clientbuttons
 
 return {
     -- All clients will match this rule.
@@ -55,6 +55,8 @@ return {
 
     -- Set Firefox to always map on the tag named "2" on screen 1.
     { rule = { class = "firefox" },
+      properties = { screen = 1, tag = "1" } },
+    { rule = { class = "Google-chrome" },
       properties = { screen = 1, tag = "1" } },
 }
 
