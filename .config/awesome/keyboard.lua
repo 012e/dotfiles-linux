@@ -1,18 +1,10 @@
--- Standard awesome library
-local gears = require("gears")
-local awful = require("awful")
-require("awful.autofocus")
--- Widget and layout library
-local wibox = require("wibox")
--- Theme handling library
-local beautiful = require("beautiful")
--- Notification library
-local naughty = require("naughty")
-local menubar = require("menubar")
+local gears         = require("gears")
+local awful         = require("awful")
+local wibox         = require("wibox")
+local beautiful     = require("beautiful")
+local naughty       = require("naughty")
+local menubar       = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup")
--- Enable hotkeys help widget for VIM and other apps
--- when client with a matching name is opened:
-require("awful.hotkeys_popup.keys")
 
 M = {}
 
@@ -21,7 +13,7 @@ apps = {
    ["dmenu_save"]           = {"p"},
    ["volumeup"]             = {"Prior"},
    ["volumedown"]           = {"Next"},
-   ["volumereset"]          = {"Next", "Shift"},
+   ["volumereset"]          = {"Prior", "Shift"},
    ["screenshot-draw"]      = {"Print", "Shift"},
    ["screenshot-clipboard"] = {"Print"}
 }
@@ -136,7 +128,7 @@ M.clientkeys = gears.table.join(
               {description = "close", group = "client"}),
     awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ,
               {description = "toggle floating", group = "client"}),
-    awful.key({ modkey, "Control" }, "Return", function (c) c:swap(awful.client.getmaster()) end,
+    awful.key({ modkey,           }, "Return", function (c) c:swap(awful.client.getmaster()) end,
               {description = "move to master", group = "client"}),
     awful.key({ modkey,           }, "o",      function (c) c:move_to_screen()               end,
               {description = "move to screen", group = "client"}),

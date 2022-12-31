@@ -15,6 +15,7 @@ local theme = dofile(themes_path.."default/theme.lua")
 -- load vector assets' generators for this theme
 
 theme.font          = "Iosevka Nerd Font 16.6"
+theme.dpi           = dpi
 
 theme.bg_normal     = xrdb.background
 theme.bg_focus      = xrdb.color12
@@ -30,7 +31,8 @@ theme.fg_minimize   = theme.bg_normal
 theme.border_normal = xrdb.color0
 theme.border_focus  = theme.bg_focus
 theme.border_marked = xrdb.color10
-theme.useless_gap = dpi(4)
+theme.useless_gap   = dpi(4)
+theme.corner_radius = dpi(10)
 
 -- There are other variable sets
 -- overriding the default one when

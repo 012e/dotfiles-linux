@@ -3,7 +3,9 @@ DWM="$HOME/.dwm/"
 
 remapkey &
 imwheel &
-xrdb "$DWM/Xresources"
+# xrdb "$DWM/Xresources"
+sleep 5
+xcompmgr &
 
 # keyboard rate: 150 delay + 40hz
 xset r rate 150 40 &

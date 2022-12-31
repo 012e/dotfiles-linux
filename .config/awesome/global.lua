@@ -1,12 +1,9 @@
-gears = require('gears')
-awful = require('awful')
+local gears = require('gears')
+local awful = require('awful')
 
-function awesome_dir(file)
+local function awesome_dir(file)
    return gears.filesystem.get_xdg_config_home() .. "awesome/" .. file
 end
-
-local startup_script = awesome_dir("autostart")
-local themes_path    = awesome_dir("themes/xresources/theme.lua")
 
 local tiling_layouts = {
     awful.layout.suit.tile,
@@ -17,13 +14,12 @@ local tiling_layouts = {
     awful.layout.suit.max.fullscreen,
 }
 
-local global  = {
+return {
    modkey         = "Mod4",
    term           = "sttmux ~",
    editor         = "nvim",
-   startup_script = startup_script,
-   themes_path    = themes_path,
+   theme          = "themes/xresources/theme",
+   themes_path    = awesome_dir("themes/xresources/theme.lua"),
+   startup_script = awesome_dir("autostart"),
    tiling_layouts = tiling_layouts
 }
-
-return global
