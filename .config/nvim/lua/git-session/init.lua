@@ -8,6 +8,7 @@ local function stdout_exe_cmd(cmd)
 	return s
 end
 
+
 local function is_git_repo()
 	-- Must direct stderr to /dev/null because for some reason
 	-- the error messsage appear in the buffer
@@ -22,16 +23,12 @@ local function session_path()
 	return (git_repo_root() .. "/vimsession.vim")
 end
 
-vim.api.nvim_create_user_command("S", function()
-	if is_git_repo() == true then
-		vim.cmd("mksession! " .. session_path())
-	end
-end, {})
-
 -- Create session
+local git_session_manager = vim.api.nvim_create_augroup("git_session_manager", { clear = true })
 vim.api.nvim_create_autocmd({ "WinEnter", "VimLeave" }, {
+	group = git_session_manager,
 	callback = function()
-		if is_git_repo() == true then
+		if is_git_repo() then
 			vim.cmd("mksession! " .. session_path())
 		end
 	end,
