@@ -12,10 +12,10 @@ static const int showbar            = 1;     /* 0 means no bar */
 static const int topbar             = 1;     /* 0 means bottom bar */
 static const char *fonts[]          = { "Iosevka Nerd Font:size=13.5", "NotoColorEmoji:pixelsize=15:antialias=true:autohint=true"  };
 static const char dmenufont[]       = "Iosevka Nerd Font:size=24";
-static const char col_gray1[]       = "#282828";
-static const char col_gray2[]       = "#504945";
-static const char col_gray3[]       = "#bdae93";
-static const char col_gray4[]       = "#ebdbb2";
+static const char col_gray1[]       = "#3C5E95";
+static const char col_gray2[]       = "#9AF2E3";
+static const char col_gray3[]       = "#FFFFFF";
+static const char col_gray4[]       = "#650d1c";
 static const char col_cyan[]        = "#ff0000";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
@@ -35,7 +35,7 @@ static const Rule rules[] = {
 	 */
 	/* class            instance    title       tags mask     isfloating   monitor    float x,y,w,h         floatborderpx*/
 	{ "Pavucontrol",    NULL,       NULL,       0,            1,           -1,        50,50,500,300,        3 },
-	{ "Thunar",         NULL,       NULL,       0,            1,           -1,        50,50,1000,1000,      3 },
+	{ "Thunar",         NULL,       NULL,       0,            1,           -1,        50,50,500,500,        3 },
 	{ "Google-chrome",  NULL,       NULL,       1 << 0,       0,           -1,        50,50,500,300,        3 },
 	{ "firefox",        NULL,       NULL,       1 << 0,       0,           -1,        50,50,500,300,        3 },
 };

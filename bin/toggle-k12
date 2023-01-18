@@ -1,0 +1,10 @@
+#!/bin/sh
+state="$HOME/personal/wip/scripts/src/k12-bot/state"
+
+if [ $(cat $state) -eq 1 ]; then
+	echo -n "0" >$state
+	notify-send "The bot is off"
+else
+	echo -n "1" >$state
+	notify-send "The bot is on"
+fi

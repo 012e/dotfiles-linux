@@ -1,8 +1,8 @@
 [Desktop Entry]
+Type=Application
 Name=Zathura
 Comment=A minimalistic PDF viewer
-Exec=zathura
+Exec=zathura %f
 Terminal=false
-Type=Application
-Categories=Office;
+Categories=Office;Viewer;
 MimeType=application/pdf;

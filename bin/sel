@@ -1,0 +1,36 @@
+#!/bin/fish
+
+set cache $HOME/.cache/selected
+
+function selected_to_argv
+    string split " " (cat $cache)
+end
+
+switch $argv[1]   
+    case mv
+        if test (count $argv) -gt 2
+            echo "Too much arguments!"
+            exit
+        end
+        if test (count $argv) -eq 1
+            mv (selected_to_argv) ./
+            exit
+        end
+        mv (selected_to_argv) $argv[2]
+    case cp
+        if test (count $argv) -gt 2
+            echo "Too much arguments!"
+            exit
+        end
+        if test (count $argv) -eq 1
+            cp -r (selected_to_argv) ./
+            exit
+        end
+        cp (selected_to_argv) $argv[2]
+    case list ls l
+        string split " " (cat $cache)
+    case a add
+        echo (realpath $argv[2..-1]) >> $cache
+    case '*'
+        echo (realpath $argv[1..-1]) > $cache
+end

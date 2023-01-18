@@ -1,0 +1,6 @@
+#!/bin/fish
+
+set -l parent_pid (tmux display-message -p '#S')
+set -l popup_session_name "popup"$parent_pid
+tmux send-keys -t $popup_session_name "$argv[1]" Enter
+tmux -s $popup_session_name list-panes

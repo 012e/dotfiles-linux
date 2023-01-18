@@ -1,4 +1,4 @@
-set scroll-step 300
+set scroll-step 100
 unmap normal j
 unmap normal k
 unmap normal u
