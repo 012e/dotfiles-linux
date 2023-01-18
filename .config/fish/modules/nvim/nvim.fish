@@ -1,3 +1,2 @@
-_alias v nvim
-_alias sv "sudo nvim"
-_alias vy "nvim -c PackerSync"
+alias v nvim
+alias sv "sudo nvim"

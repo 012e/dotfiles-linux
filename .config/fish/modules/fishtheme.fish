@@ -23,7 +23,7 @@ function __in_git_merge
 end
 
 function fish_title
-    set title (basename $PWD)
+    set title (prompt_pwd)
     if __in_git_repo
         if not __git_up_to_date
             set title "[pull?]"$title
