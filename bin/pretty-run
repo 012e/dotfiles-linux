@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# command to execute
+command=$1
+function print_color {
+  local text=$1
+  local color=$2
+  local no_new_line=$3
+
+  local color_end="\e[0m"
+  
+  if [[ -n $no_new_line ]]; then
+    echo -ne "${color}${text}${color_end}"
+  else
+    echo -e "${color}${text}${color_end}"
+  fi
+}
+
+print_color "Running '$command'" '\033[1;34m'
+
+
+bash -c "$command"
+run_status=$?
+if [[ "$run_status" != "0" ]]; then
+  print_color "Failed: code $run_status." '\033[1;31m' nonewline
+else
+  print_color "Success." '\033[1;32m' nonewline
+fi
+
+print_color " Finshed running $command" '\033[1;34m'
+read
+

@@ -1,0 +1,46 @@
+#!/bin/bash
+
+# command to execute in the popup
+command="pretty-run '$1'"
+
+# get tmux properties
+# for example (tmux display-message -p "#{session_name}")
+#     will be (get_tmux session_name)
+function get_tmux {
+  local prop=$1
+  local target=$2
+  if [[ -n $1 ]]; then
+    tmux display-message -t "$target" -p "#{$prop}"
+  else
+    tmux display-message -p "#{$prop}"
+  fi
+}
+
+# list all tmux 
+function window_ls {
+  local target=$1
+  if [[ -n $target ]]; then
+    tmux list-windows -t $target
+  else
+    tmux list-windows
+  fi
+}
+
+function get_active_window {
+  local session=$1
+  window_ls $session | rg active | awk '{print $1}' | tr --delete ':'
+}
+
+parent_pid=$(get_tmux session_name)
+parent_path=$(get_tmux pane_current_path)
+popup_session="popup$parent_pid"
+
+# create tmux popup session if not exists
+tmux new-session  -d -s $popup_session &> /dev/null
+
+popup_active_window=$(get_active_window $popup_session)
+popup_target="${popup_session}:${popup_active_window}"
+popup_path=$(get_tmux pane_current_path $popup_target)
+
+tmux new-window -t "$popup_session" "$command"
+popuptmux "$parent_pid" "$parent_path"
