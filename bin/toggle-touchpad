@@ -1,0 +1,14 @@
+#!/bin/sh
+
+current=$(synclient | rg Touchpad | awk '{print $3}')
+
+# invert current config
+(( current ^= 1 ))
+
+synclient TouchpadOff=$current
+
+if [ "$current" = "1" ]; then
+  notify-send "Touchpad" "Touchpad is disabled"
+else
+  notify-send "Touchpad" "Touchpad is enabled"
+fi

@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ -t 0 ]; then # if stdin is filled
+  xclip -selection clipoard -o
+else
+  read stdin
+  echo "$stdin" | xclip -selection clipboard
+  echo piped stdin to clipboard
+fi

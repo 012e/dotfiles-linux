@@ -1,4 +1,11 @@
-#!/bin/sh
+#!/bin/bash
+# $1 -> session name
+# $2 -> current path
 new_popup="tmux new -A -s popup$1"
 current_dir="$2"
-tmux popup -w 80% -h 80% -d "$current_dir" -E "$new_popup" >/dev/null
+
+if [[ -n current_dir ]]; then
+  tmux popup -w 80% -h 80% -d "$current_dir" -E "$new_popup"
+else 
+  tmux popup -w 80% -h 80% -E "$new_popup"
+fi

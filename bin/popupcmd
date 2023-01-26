@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # command to execute in the popup
-command="pretty-run '$1'"
+command="prettyrun '$1'"
 
 # get tmux properties
-# for example (tmux display-message -p "#{session_name}")
-#     will be (get_tmux session_name)
+# for example $(tmux display-message -p "#{session_name}")
+#     will be $(get_tmux session_name)
 function get_tmux {
   local prop=$1
   local target=$2
@@ -43,4 +43,5 @@ popup_target="${popup_session}:${popup_active_window}"
 popup_path=$(get_tmux pane_current_path $popup_target)
 
 tmux new-window -t "$popup_session" "$command"
+tmux set-hook -t "$popup_target" "pane-exited" "detach" # detach on enter
 popuptmux "$parent_pid" "$parent_path"
