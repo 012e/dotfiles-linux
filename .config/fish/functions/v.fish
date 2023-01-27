@@ -5,8 +5,14 @@ function v
   end
 
   set -l git_path (git rev-parse --show-toplevel 2> /dev/null)
-  set -l vim_target "$git_path/$PROJECT_PATH/nvim.vim"
-  set -l lua_target "$git_path/$PROJECT_PATH/nvim.lua"
+  if test -d $git_path/.$PROJECT_PATH
+    set my_project_path $git_path/.$PROJECT_PATH
+  else 
+    set my_project_path $git_path/$PROJECT_PATH
+  end
+
+  set -l vim_target "$my_project_path/nvim.vim"
+  set -l lua_target "$my_project_path/nvim.lua"
 
   test -e "$vim_target"
   set -l have_vim $status

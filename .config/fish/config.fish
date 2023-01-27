@@ -10,12 +10,32 @@ _env_var  GOPATH               "$HOME/.local/share/go/"
 _env_var  MANPAGER             "sh -c 'col -bx | bat -l man -p'"
 _env_var  XDG_CONFIG_HOME      "$config_path"                                                   
 _env_var  XDG_DOWNLOAD_DIR     "$HOME/down"                                                   
+_env_var  PROJECT_PATH         "huyproject"
 set -U Z_CMD "zmove"
 # }}}
 
 function _alias
     abbr --add -g $argv[1] $argv[2..-1]
 end
+
+# misc {{{
+function __nvim_telescope
+    nvim +"Telescope find_files"
+end
+
+function __nvim_marks
+    nvim +'lua require("harpoon.ui").toggle_quick_menu()'
+end
+
+
+bind -k f5 __nvim_telescope
+bind \e\[15\;5~ __nvim_marks
+bind -k ppage "nextd; commandline -f repaint"
+bind -k npage "prevd; commandline -f repaint"
+bind \n "down-or-search"
+bind \v "up-or-search"
+bind \cF "history-pager"
+# }}}
 
 # power management {{{
 _alias shutdown "sudo shutdown now"
@@ -25,10 +45,10 @@ _alias reboot "sudo reboot"
 #}}}
 
 # package manager {{{
-_alias shutdown "sudo shutdown now"
-_alias poweroff "sudo shutdown now"
-_alias suspend "sudo systemctl suspend"
-_alias reboot "sudo reboot"
+_alias II "sudo pacman -S --needed"
+_alias RR "sudo pacman -Rs"
+_alias UU "sudo pacman -Syyu"
+_alias CC 'echo "Clean up orphan packages" && sudo pacman -Rs (pacman -Qtdq) && echo "Clean cache" && sudo pacman -Sc'
 # }}}
 
 # exa {{{
@@ -64,7 +84,6 @@ function lt
     end
 
     ls --tree --level=$argv[1] $argv[2]
-    # echo ($total_arg -eq 0)
 end
 
 function lt.
@@ -86,7 +105,6 @@ function lt.
     end
 
     ls. --tree --level=$argv[1] $argv[2]
-    # echo ($total_arg -eq 0)
 end
 # }}}
 
@@ -113,7 +131,7 @@ alias gl="git log --graph --abbrev-commit --decorate --date=relative -10 --forma
 _alias gp "git push"
 _alias gs "git status"
 _alias gd "git diff"
-_alias gb git_smart_checkout
+alias gb git_smart_checkout
 
 
 alias conf='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
@@ -128,7 +146,6 @@ fish_default_key_bindings
 # Random useful things 
 # aliases/functions
 
-alias v nvim
 alias sv "sudo nvim"
 
 _alias rip "killall"
@@ -138,5 +155,3 @@ _alias pyenv "source ./venv/bin/activate.fish"
 alias rm "trash-put"
 trap "begin tmux kill-session -t $fish_pid; tmux kill-session -t popup$fish_pid; end &> /dev/null" EXIT
 # }}}
-
-
