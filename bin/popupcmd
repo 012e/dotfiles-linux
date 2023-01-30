@@ -40,8 +40,9 @@ tmux new-session  -d -s $popup_session &> /dev/null
 
 popup_active_window=$(get_active_window $popup_session)
 popup_target="${popup_session}:${popup_active_window}"
-popup_path=$(get_tmux pane_current_path $popup_target)
 
 tmux new-window -t "$popup_session" "$command"
-tmux set-hook -t "$popup_target" "pane-exited" "detach" # detach on enter
-popuptmux "$parent_pid" "$parent_path"
+if [[ ! $2 == "--silent" ]]; then
+  tmux set-hook -t "$popup_target" "pane-exited" "detach" # detach on enter
+  popuptmux
+fi

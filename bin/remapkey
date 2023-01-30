@@ -1,6 +1,4 @@
 #!/bin/sh
 setxkbmap -option caps:swapescape     # swap esc <> caps
 setxkbmap -option altwin:swap_alt_win # swap alt <> meta
-setxkbmap -option ctrl:menu_rctrl
-xmodmap -e "keycode 105 = Menu"
 xset r rate 150 40 &

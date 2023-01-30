@@ -30,6 +30,7 @@ COMMAND=$1
 COMMAND_COLORED=$(color "'$COMMAND'" "$LIGHTRED")
 
 # pre-execution
+date "+%H:%M:%S   %d/%m/%y" # current time and date
 echo -e "$(color "Running " $BLUE)${COMMAND_COLORED}$(color " in $PWD" $BLUE)"
 
 # execution
