@@ -5,9 +5,7 @@ function v
   end
 
   set -l git_path (git rev-parse --show-toplevel 2> /dev/null)
-  if test -d $git_path/.$PROJECT_PATH
-    set my_project_path $git_path/.$PROJECT_PATH
-  else 
+  if test -d $git_path/$PROJECT_PATH
     set my_project_path $git_path/$PROJECT_PATH
   end
 
