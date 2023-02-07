@@ -1,0 +1,4 @@
+st.font: Iosevka Nerd Font-14
+
+! theme setup 
+#include "./themes/catppuccin/mocha.Xresources"
