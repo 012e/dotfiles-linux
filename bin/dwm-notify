@@ -1,7 +1,7 @@
 #!/bin/bash
 # pause dwmbar for 1 sec
 bar_pid=$(pgrep dwmbar)
-queue_name="dwmbar-queue$((1 + $RANDOM))"
+queue_name="dwmbar-queue$(($RANDOM))"
 queue_file="/tmp/$queue_name"
 touch $queue_file
 xsetroot -name "$1"

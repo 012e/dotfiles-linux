@@ -5,12 +5,13 @@ end
 set config_path "$HOME/.config"
 _env_var  AWESOME_THEMES_PATH  "$config_path/awesome/themes"                                  
 _env_var  EDITOR               "nvim"                                                           
+_env_var  BROWSER              "brave"                                                           
 _env_var  GIT_CONFIG_GLOBAL    "$config_path/git/config"                                      
 _env_var  GOPATH               "$HOME/.local/share/go/"                                       
 _env_var  MANPAGER             "sh -c 'col -bx | bat -l man -p'"
 _env_var  XDG_CONFIG_HOME      "$config_path"                                                   
 _env_var  XDG_DOWNLOAD_DIR     "$HOME/down"                                                   
-_env_var  PROJECT_PATH         "huyproject"
+_env_var  PROJECT_PATH         ".huyproject"
 set -U Z_CMD "zmove"
 # }}}
 
@@ -19,8 +20,8 @@ function _alias
 end
 
 # misc {{{
-function __nvim_telescope
-    nvim +"Telescope find_files"
+function __nvim_find
+    nvim -c "Find"
 end
 
 function __nvim_marks
@@ -28,13 +29,14 @@ function __nvim_marks
 end
 
 
-bind -k f5 __nvim_telescope
+bind -k f5 __nvim_find
 bind \e\[15\;5~ __nvim_marks
-bind -k ppage "nextd; commandline -f repaint"
-bind -k npage "prevd; commandline -f repaint"
 bind \n "down-or-search"
 bind \v "up-or-search"
+bind \e\[29~ __nvim_find
 bind \cF "history-pager"
+
+_alias pyrun "source ./venv/bin/activate.fish && python main.py" 
 # }}}
 
 # power management {{{
@@ -129,7 +131,7 @@ end
 _alias gc "git commit"
 alias gl="git log --graph --abbrev-commit --decorate --date=relative -10 --format=format:'%C(bold blue)%h%C(reset) %C(bold yellow)%d%C(reset) %C(white)%s%C(reset) %C(green)(%ar)%C(reset) %C(dim white)- %an%C(reset)'"
 _alias gp "git push"
-_alias gs "git status"
+_alias gs "git status --short"
 _alias gd "git diff"
 alias gb git_smart_checkout
 
@@ -147,11 +149,12 @@ fish_default_key_bindings
 # aliases/functions
 
 alias sv "sudo nvim"
+alias screenoff "sleep 1 && xset dpms force off"
+alias icat "kitten icat"
 
-_alias rip "killall"
 _alias ... "cd ../../"
 _alias .... "cd ../../../"
 _alias pyenv "source ./venv/bin/activate.fish"
 alias rm "trash-put"
-trap "begin tmux kill-session -t $fish_pid; tmux kill-session -t popup$fish_pid; end &> /dev/null" EXIT
+trap "begin tmux kill-session$fish_pid; tmux kill-session -t popup$fish_pid; end &> /dev/null" EXIT
 # }}}

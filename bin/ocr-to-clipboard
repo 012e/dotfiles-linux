@@ -1,6 +1,9 @@
 #!/bin/sh
 set -e
-scrot --freeze --select /tmp/ocr.png -o
+file="/tmp/ocr.png"
+# maim --select /tmp/ocr.png
+rm -f $file
+flameshot gui --path=$file
 tesseract -l vie+eng /tmp/ocr.png stdout | xclip -selection clipboard
 notify-send "OCR (tesseract)" "Copied text to clipboard"
 # Dependencies (arch)

@@ -1,10 +1,8 @@
-#!/bin/sh
+#!/bin/bash
 DWM="$HOME/.dwm/"
 
 /usr/lib/xfce4/notifyd/xfce4-notifyd &
 remapkey &
-imwheel &
-xrdb "$DWM/Xresources"
 
 # keyboard rate: 150 delay + 40hz
 xset r rate 150 40 &
@@ -14,3 +12,10 @@ $DWM/dwmbar &
 
 # sleep 10s
 feh --bg-scale $DWM/bg.jpg
+
+xrdb ~/.config/Xresources.d/main.Xresources
+brave &
+# syndaemon -R & # disable touchpad while typing
+# xbanish &
+remapkey &
+
