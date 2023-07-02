@@ -74,14 +74,14 @@ static const char *termcmd[]  = { "sttmux", NULL };
 
 // Volume controls
 static const char *pavucontrol[] = { "pavucontrol", NULL };
-static const char *volumeup[] =    { "volumeup", "NULL" };
-static const char *volumedown[] =  { "volumedown", "NULL" };
-static const char *resetvolume[] = { "volumereset", "NULL" };
-static const char *mutevolume[] =  { "volumemute", "NULL" };
+static const char *volumeup[] =    { "volumeup", NULL };
+static const char *volumedown[] =  { "volumedown", NULL };
+static const char *resetvolume[] = { "volumereset", NULL };
+static const char *mutevolume[] =  { "volumemute", NULL };
 
-static const char *flameshotcmd[] = { "screenshot", "NULL" };
-static const char *ocr[] = { "ocr-to-clipboard", "NULL" };
-static const char *togglek12[] = { "toggle-k12", "NULL" };
+static const char *flameshotcmd[] = { "screenshot", NULL };
+static const char *ocr[] = { "ocr-to-clipboard", NULL };
+static const char *togglek12[] = { "toggle-k12", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
