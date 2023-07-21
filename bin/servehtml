@@ -1,0 +1,7 @@
+#!/bin/bash
+if [ $# -eq 0 ]; then
+  echo "No port was given, defaulting to :8080"
+  python -m http.server 8080
+else
+  python -m http.server "$1"
+fi
