@@ -1,0 +1,13 @@
+{
+    "workbench.startupEditor": "none",
+    "editor.lineNumbers": "relative",
+    "editor.fontLigatures": true,
+    "workbench.sideBar.location": "right",
+    "workbench.iconTheme": "catppuccin-macchiato",
+    "workbench.colorTheme": "Catppuccin Macchiato",
+    "editor.fontFamily": "'Iosevka Nerd Font', 'Courier New', monospace",
+    "editor.fontSize": 18,
+    "catppuccin.italicComments": false,
+    "catppuccin.italicKeywords": false,
+    "editor.minimap.enabled": false,
+}
