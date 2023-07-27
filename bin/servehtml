@@ -5,4 +5,4 @@ if [ $# -eq 0 ]; then
 else
   PORT="$1"
 fi
-python3 -h &> /dev/null && python3 -m http.server $PORT || python -m http.server $PORT
+command -v python &> /dev/null && python3 -m http.server $PORT || python -m http.server $PORT
