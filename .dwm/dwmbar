@@ -28,11 +28,11 @@ volume() {
 		return 0
 	fi
 	if [ "$volume" -le 33 ]; then
-		echo "奄 $volume"
+		echo "$volume"
 	elif [ "$volume" -le 66 ]; then
-		echo "奔 $volume"
+		echo "$volume"
 	else
-		echo "墳 $volume"
+		echo "$volume"
 	fi
 }
 
@@ -45,9 +45,7 @@ cpu_temp() {
 }
 
 cpu_usage() {
-	top -bn1 | rg "Cpu" |
-		sed "s/.*, *\([0-9.]*\)%* id.*/\1/" |
-		awk '{print 100 - $1"%"}'
+ mpstat | awk 'FNR == 4 {print $3"%"}'
 }
 
 update_dwmbar() {
