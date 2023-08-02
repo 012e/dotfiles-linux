@@ -12,6 +12,14 @@ battery() {
 	echo $(((battery0 + battery1) / 2))
 }
 
+battery_lenovo() {
+	battery0=$(cat /sys/class/power_supply/BAT0/capacity)
+	if [[ "$(cat /sys/class/power_supply/ADP0/online)" == "1" ]]; then
+		echo -n C
+	fi
+	echo $battery0
+}
+
 volume() {
 	volume=$(pamixer --get-volume)
 	muted=$(pamixer --get-mute)
