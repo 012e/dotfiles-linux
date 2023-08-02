@@ -9,12 +9,13 @@ xset r rate 150 40 &
 
 # dwm bar
 $DWM/dwmbar &
+volumeicon
 
 # sleep 10s
 feh --bg-scale $DWM/bg.jpg
 
 xrdb ~/.config/Xresources.d/main.Xresources
-brave &
+firefox &
 # syndaemon -R & # disable touchpad while typing
 # xbanish &
 remapkey &
