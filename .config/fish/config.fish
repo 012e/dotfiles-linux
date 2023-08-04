@@ -5,7 +5,7 @@ end
 set config_path "$HOME/.config"
 _env_var  AWESOME_THEMES_PATH  "$config_path/awesome/themes"                                  
 _env_var  EDITOR               "nvim"                                                           
-_env_var  BROWSER              "brave"                                                           
+_env_var  BROWSER              "firefox"                                                           
 _env_var  GIT_CONFIG_GLOBAL    "$config_path/git/config"                                      
 _env_var  GOPATH               "$HOME/.local/share/go/"                                       
 _env_var  MANPAGER             "sh -c 'col -bx | bat -l man -p'"
@@ -156,5 +156,10 @@ _alias ... "cd ../../"
 _alias .... "cd ../../../"
 _alias pyenv "source ./venv/bin/activate.fish"
 alias rm "trash-put"
-trap "begin tmux kill-session$fish_pid; tmux kill-session -t popup$fish_pid; end &> /dev/null" EXIT
+
+trap "begin \
+tmux kill-session $fish_pid; \
+tmux kill-session -t $fish_pid; \
+tmux kill-session -t popup$fish_pid; \
+end &> /dev/null" EXIT
 # }}}
