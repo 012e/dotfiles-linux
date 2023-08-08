@@ -1,13 +1,15 @@
 #!/bin/sh
 
-current=$(synclient | rg Touchpad | awk '{print $3}')
+# device status: 1 is on, 0 is off
+# 15 is touchpad device id derived from `xinput list`
+dev_status=$(xinput list-props 15 | rg "Device Enabled" | awk '{print $4}')
 
-# invert current config
-(( current ^= 1 ))
+# invert device status
+(( dev_status ^= 1 ))
 
-synclient TouchpadOff=$current
+xinput set-prop 15 179 "$dev_status"
 
-if [ "$current" = "1" ]; then
+if [ "$dev_status" = "0" ]; then
   notify-send "Touchpad" "Touchpad is disabled"
 else
   notify-send "Touchpad" "Touchpad is enabled"
