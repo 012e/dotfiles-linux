@@ -1,9 +1,0 @@
-#!/usr/bin/sh
-volume=$(pamixer --get-volume)
-muted=$(pamixer --get-mute)
-if $muted = true; then
-	echo muted
-	return 0
-fi
-
-echo $volume

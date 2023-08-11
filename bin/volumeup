@@ -1,5 +1,0 @@
-#!/usr/bin/sh
-# probably used for the dwmbar
-pamixer --increase 5 --allow-boost
-sound &
-dwm-notify "$(volume)"

@@ -1,6 +1,0 @@
-#!/bin/bash
-SESSION_NAME=$(tmux display-message -p "#{session_name}")
-CURRENT_PATH=$(tmux display-message -p "#{pane_current_path}")
-new_popup="tmux new -A -s popup$SESSION_NAME"
-
-tmux popup -w 80% -h 80% -d "$CURRENT_PATH" -E "$new_popup"
