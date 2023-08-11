@@ -1,5 +1,0 @@
-#! /usr/bin/sh
-pamixer --unmute
-pamixer --set-volume 100
-sound &
-dwm-notify "reset"
