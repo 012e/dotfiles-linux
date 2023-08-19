@@ -1,5 +1,6 @@
 configuration {
   font: "Iosevka Nerd Font 20";
+  levenshtein-sort: false;
   kb-remove-to-eol: "";
   kb-accept-entry: "Control+m,Return,KP_Enter";
   kb-row-up: "Control+k,Control+p";
