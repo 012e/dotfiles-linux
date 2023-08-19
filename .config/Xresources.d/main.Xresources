@@ -1,31 +1,7 @@
-st.font: Iosevka Nerd Font:pixelsize=21:antialias=true:autohint=true;
-st.alpha: 0.92
-st.alphaOffset: 1.0
+st.font: Iosevka Nerd Font:pixelsize=22:antialias=true:autohint=true;                                                                                                   
+st.alpha: 1
+st.alphaOffset: 0
 st.cursorColor: #FF1493
 
 ! theme setup 
 #include "./themes/catppuccin/mocha.Xresources"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

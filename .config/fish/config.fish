@@ -1,17 +1,20 @@
 # ENV vars {{{
+direnv hook fish | source # setup direnv
 function _env_var -a env value
     set -gx $env $value
 end
 set config_path "$HOME/.config"
-_env_var  AWESOME_THEMES_PATH  "$config_path/awesome/themes"                                  
-_env_var  EDITOR               "nvim"                                                           
-_env_var  BROWSER              "firefox"                                                           
-_env_var  GIT_CONFIG_GLOBAL    "$config_path/git/config"                                      
-_env_var  GOPATH               "$HOME/.local/share/go/"                                       
-_env_var  MANPAGER             "sh -c 'col -bx | bat -l man -p'"
-_env_var  XDG_CONFIG_HOME      "$config_path"                                                   
-_env_var  XDG_DOWNLOAD_DIR     "$HOME/down"                                                   
-_env_var  PROJECT_PATH         ".huyproject"
+_env_var  AWESOME_THEMES_PATH        "$config_path/awesome/themes"                                  
+_env_var  BROWSER                    "firefox"                                                           
+_env_var  EDITOR                     "nvim"                                                           
+_env_var  GIT_CONFIG_GLOBAL          "$config_path/git/config"                                      
+_env_var  GOPATH                     "$HOME/.local/share/go/"                                       
+_env_var  GTK_USE_PORTAL             "1"
+_env_var  MANPAGER                   "sh -c 'col -bx | bat -l man -p'"
+_env_var  MANROFFOPT                 "-c"
+_env_var  PROJECT_PATH               ".huyproject"
+_env_var  XDG_DOWNLOAD_DIR           "$HOME/down"                                                   
+_env_var _JAVA_AWT_WM_NONREPARENTING 1
 set -U Z_CMD "zmove"
 # }}}
 
@@ -40,17 +43,17 @@ _alias pyrun "source ./venv/bin/activate.fish && python main.py"
 # }}}
 
 # power management {{{
-_alias shutdown "sudo shutdown now"
-_alias poweroff "sudo shutdown now"
-_alias suspend "sudo systemctl suspend"
-_alias reboot "sudo reboot"
+_alias shutdown "shutdown now"
+_alias poweroff "shutdown now"
+_alias suspend "systemctl suspend"
+_alias reboot "reboot"
 #}}}
 
 # package manager {{{
-_alias II "sudo pacman -S --needed"
-_alias RR "sudo pacman -Rs"
-_alias UU "sudo pacman -Syyu"
-_alias CC 'echo "Clean up orphan packages" && sudo pacman -Rs (pacman -Qtdq) && echo "Clean cache" && sudo pacman -Sc'
+_alias II "sudo nala install"
+_alias RR "sudo nala purge"
+_alias UU "sudo nala update && sudo nala upgrade"
+_alias CC "sudo nala autoremove"
 # }}}
 
 # exa {{{
@@ -110,13 +113,6 @@ function lt.
 end
 # }}}
 
-# key bindingds {{{
-_alias shutdown "sudo shutdown now"
-_alias poweroff "sudo shutdown now"
-_alias suspend "sudo systemctl suspend"
-_alias reboot "sudo reboot"
-# }}}
-
 # git {{{
 _alias g "git"
 
@@ -139,8 +135,7 @@ alias gb git_smart_checkout
 alias conf='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 # }}}
 
-starship init fish | source
-
+# starship init fish | source
 # misc {{{
 set fish_greeting
 fish_default_key_bindings
@@ -148,18 +143,39 @@ fish_default_key_bindings
 # Random useful things 
 # aliases/functions
 
-alias sv "sudo nvim"
+alias sv "sudo vim"
 alias screenoff "sleep 1 && xset dpms force off"
 alias icat "kitten icat"
 
 _alias ... "cd ../../"
 _alias .... "cd ../../../"
-_alias pyenv "source ./venv/bin/activate.fish"
 alias rm "trash-put"
 
+
+## needed for st terminal
 trap "begin \
 tmux kill-session $fish_pid; \
 tmux kill-session -t $fish_pid; \
 tmux kill-session -t popup$fish_pid; \
 end &> /dev/null" EXIT
+
+# needed for foot terminal
+trap "begin \
+tmux kill-session $fish_pid; \
+tmux kill-session -t $fish_pid; \
+tmux kill-session -t popup$fish_pid; \
+end &> /dev/null" SIGTERM
+
+# trap "begin \
+# tmux kill-session $fish_pid; \
+# tmux kill-session -t $fish_pid; \
+# tmux kill-session -t popup$fish_pid; \
+# end &> /dev/null" SIGKILL
+# 
+# # needed for kitty, foot terminal
+trap "begin \
+tmux kill-session $fish_pid; \
+tmux kill-session -t $fish_pid; \
+tmux kill-session -t popup$fish_pid; \
+end &> /dev/null" SIGHUP
 # }}}
