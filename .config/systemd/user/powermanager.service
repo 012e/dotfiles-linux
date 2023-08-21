@@ -1,0 +1,6 @@
+[Service]
+Environment=STARTUP_WAIT=30s
+ExecStart=/home/huy/bin/powermanager
+
+[Install]
+WantedBy=default.target
