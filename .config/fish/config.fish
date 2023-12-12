@@ -15,7 +15,7 @@ _env_var  MANROFFOPT                 "-c"
 _env_var  PROJECT_PATH               ".huyproject"
 _env_var  XDG_DOWNLOAD_DIR           "$HOME/down"                                                   
 _env_var _JAVA_AWT_WM_NONREPARENTING 1
-set -U Z_CMD "zmove"
+# set -U Z_AFTER 'clear && echo $PWD && ls'
 # }}}
 
 function _alias
@@ -179,3 +179,4 @@ tmux kill-session -t $fish_pid; \
 tmux kill-session -t popup$fish_pid; \
 end &> /dev/null" SIGHUP
 # }}}
+source ~/.asdf/asdf.fish
