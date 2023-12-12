@@ -1,0 +1,39 @@
+swipe:
+  3:
+    left:
+      command: "xdotool key alt+Right" # History forward
+    right:
+      command: "xdotool key alt+Left" # History back
+  4:
+    left:
+      command: "xdotool key super+j"
+    right:
+      command: "xdotool key super+k"
+    up:
+      command: "xdotool key super+k"
+    down:
+      command: "xdotool key super+j"
+pinch:
+  in:
+    command: "xdotool keydown ctrl click 4 keyup ctrl" # Zoom in
+  out:
+    command: "xdotool keydown ctrl click 5 keyup ctrl" # Zoom out
+hold:
+  2:
+    command: "xdotool click --clearmodifiers 3"
+  3:
+    command: "xdotool key ctrl+t"
+  4:
+    command: "xdotool key ctrl+w"
+
+threshold:
+  pinch: 0.5
+  hold: 0.3
+interval:
+  hold: 0.3
+
+plugin: 
+  inputs:
+    libinput_command_input:
+      enable-tap: true
+      verbose: true
