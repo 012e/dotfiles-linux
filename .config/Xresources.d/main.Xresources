@@ -1,4 +1,4 @@
-st.font: Iosevka Nerd Font:pixelsize=22:antialias=true:autohint=true;                                                                                                   
+st.font: FiraCode Nerd Font:pixelsize=18:antialias=true:autohint=true;
 st.alpha: 1
 st.alphaOffset: 0
 st.cursorColor: #FF1493
