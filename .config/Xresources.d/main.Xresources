@@ -1,7 +1,7 @@
-st.font: FiraCode Nerd Font:pixelsize=18:antialias=true:autohint=true;
+st.font: Iosevka Nerd Font:pixelsize=20:antialias=true:autohint=true;
 st.alpha: 1
 st.alphaOffset: 0
 st.cursorColor: #FF1493
 
 ! theme setup 
-#include "./themes/catppuccin/mocha.Xresources"
+#include "./themes/kanagawa.Xresources"
