@@ -1,3 +1,4 @@
+# base packages
 fish trash-cli make libinput-dev pamixer powertop libnotify-bin mpv xss-lock xautolock copyq pavucontrol qbittorrent simplescreenrecorder ncal curl imagemagick
 baobab gparted shellcheck youtube-dl calibre-bin foliate unrar
 direnv curl xclip exa tmux rofi ruby golang feh fd-find ripgrep bat inotify-tools postgresql dunst lm-sensors vim gh cloc hyperfine btop xcompmgr fzf htop picom xdotool
@@ -15,7 +16,6 @@ black
 docker-ce docker-compose
 tesseract-ocr tesseract-ocr-vie
 tree
-binfmt-support
 traceroute
 maven openjdk-20-jdk gradle openjdk-21-jdk
 heaptrack heaptrack-gui
@@ -25,3 +25,16 @@ openvpn
 
 gnupg2
 awesome
+
+# extras
+go install github.com/lucapette/fakedata@latest
+go install github.com/aarzilli/gdlv@latest
+go install github.com/go-delve/delve/cmd/dlv@latest
+go install github.com/pdfcpu/pdfcpu/cmd/pdfcpu@latest
+go install -tags 'postgres' github.com/golang-migrate/migrate/v4/cmd/migrate@latest
+go install golang.org/x/tools/cmd/goimports@latest
+go install github.com/jesseduffield/lazygit@latest
+cargo install dua-cli
+cargo install tokei
+cargo install bob-nvim
+cargo install sqlx-cli
