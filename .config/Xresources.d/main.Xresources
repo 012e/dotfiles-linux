@@ -1,5 +1,5 @@
 st.font: Iosevka Nerd Font:pixelsize=20:antialias=true:autohint=true;
-st.alpha: 1
+st.alpha: 0.95
 st.alphaOffset: 0
 st.cursorColor: #FF1493
 
