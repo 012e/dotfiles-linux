@@ -14,5 +14,5 @@ configuration {
       sorting-method:    "name";
   }
 }
-@theme "./pinkdmenu.rasi"
 
+@theme "./pinkdmenu.rasi"
