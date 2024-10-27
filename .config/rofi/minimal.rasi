@@ -1,0 +1,71 @@
+configuration {
+  drun {
+    display-name: "[app]";
+  }
+
+  run {
+    display-name: "[bin]";
+  }
+
+  window {
+    display-name: "[window]";
+  }
+
+  timeout {
+    delay: 10;
+    action: "kb-cancel";
+  }
+}
+
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  spacing: 0;
+
+  bg: #222222;
+  fg: #eeeeee;
+
+  bg-alt: #005577;
+  fg-alt: #424242;
+
+  background-color: #005577;
+  tgext-color: @fg;
+}
+
+window {
+  transparency: "real";
+}
+
+mainbox {
+  children: [inputbar, listview];
+}
+
+inputbar {
+  children: [prompt, entry];
+}
+
+entry {
+  padding: 12px 0;
+}
+
+prompt {
+  padding: 12px;
+}
+
+listview {
+  lines: 8;
+}
+
+element {
+  children: [element-text];
+}
+
+element-text {
+  padding: 12px;
+  text-color: @fg-alt;
+}
+
+element-text selected {
+  text-color: @fg;
+}
