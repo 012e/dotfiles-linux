@@ -1,6 +1,7 @@
 set scroll-step 100
 set selection-notification false
 set selection-clipboard clipboard
+
 # normal mode
 unmap normal j
 unmap normal k
@@ -11,6 +12,20 @@ map d scroll half-down
 map k scroll up
 map j scroll down
 
+unmap normal w
+map w scroll up
+
+unmap normal s
+map s scroll down 
+
+unmap normal a
+map a scroll half-up
+
+map W scroll up
+map S scroll down
+map A scroll left
+map D scroll right
+
 # fullscreen mode
 unmap fullscreen j
 unmap fullscreen k
@@ -20,3 +35,11 @@ map [fullscreen] u scroll half-up
 map [fullscreen] d scroll half-down
 map [fullscreen] k scroll up
 map [fullscreen] j scroll down
+
+map <C-b> focus_inputbar ":blist "
+map <C-m> focus_inputbar ":bmark "
+
+unmap normal Left
+unmap normal Right
+map <Left> navigate previous
+map <Right> navigate next
