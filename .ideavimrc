@@ -1,0 +1,37 @@
+" .ideavimrc is a configuration file for IdeaVim plugin. It uses
+"   the same commands as the original .vimrc configuration.
+" You can find a list of commands here: https://jb.gg/h38q75
+" Find more examples here: https://jb.gg/share-ideavimrc
+
+
+set scrolloff=5
+
+set incsearch
+set relativenumber
+set number
+set paste
+let mapleader=" "
+
+map Q gq
+
+Plug 'machakann/vim-highlightedyank'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+
+Plug 'vim-matchit'
+Plug 'chrisbra/matchit'
+set matchit
+
+map <C-f> <Action>(ShowErrorDescription)
+map <C-S-V> "+p
+vmap <C-c> "+y
+nmap <C-c> "+yy
+imap <C-c> "+yy
+
+
+nnoremap ]e :action GotoNextError<CR>
+nnoremap [e :action GotoPreviousError<CR>
+
+"" Map \b to toggle the breakpoint on the current line
+"map \b <Action>(ToggleLineBreakpoint)
+set ideajoin
