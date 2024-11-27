@@ -23,11 +23,10 @@ Plug 'chrisbra/matchit'
 set matchit
 
 map <C-f> <Action>(ShowErrorDescription)
-map <C-S-V> "+p
+nnoremap <C-S-v> "+gP
 vmap <C-c> "+y
 nmap <C-c> "+yy
 imap <C-c> "+yy
-
 
 nnoremap ]e :action GotoNextError<CR>
 nnoremap [e :action GotoPreviousError<CR>
