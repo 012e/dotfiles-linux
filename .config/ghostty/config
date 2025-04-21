@@ -1,0 +1,9 @@
+font-family = "Iosevka Nerd Font"
+font-size = 15
+cursor-color = ff1493
+cursor-text = 00EB6C
+theme = catppuccin-mocha
+background-opacity = 0.95
+scrollback-limit = 3000
+window-decoration = false
+confirm-close-surface = false
