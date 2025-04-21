@@ -1,5 +1,5 @@
 # ENV vars {{{
-direnv hook fish | source # setup direnv
+#direnv hook fish | source # setup direnv
 function _env_var -a env value
     set -gx $env $value
 end
@@ -15,6 +15,7 @@ _env_var  MANROFFOPT                 "-c"
 _env_var  PROJECT_PATH               ".huyproject"
 _env_var  XDG_DOWNLOAD_DIR           "$HOME/down"                                                   
 _env_var _JAVA_AWT_WM_NONREPARENTING 1
+_env_var GEM_HOME                    "$HOME/.local/share/gem"
 # set -U Z_AFTER 'clear && echo $PWD && ls'
 # }}}
 
@@ -23,23 +24,23 @@ function _alias
 end
 
 # misc {{{
-function __nvim_find
-    nvim -c "Find"
-end
-
 function __nvim_marks
     nvim +'lua require("harpoon.ui").toggle_quick_menu()'
 end
 
 
-bind -k f5 __nvim_find
+bind \cO fzf_open
 bind \e\[15\;5~ __nvim_marks
 bind \n "down-or-search"
 bind \v "up-or-search"
 bind \e\[29~ __nvim_find
-bind \cF "history-pager"
+fzf_configure_bindings --directory=\cf --variables=\cv --history=\ch
+set fzf_directory_opts --preview=""
+set fzf_history_opts --preview=""
 
-_alias pyrun "source ./venv/bin/activate.fish && python main.py" 
+alias xclip "xclip -selection clipboard"
+alias k "kubectl"
+_alias ipy "ipython3"
 # }}}
 
 # power management {{{
@@ -50,10 +51,10 @@ _alias reboot "reboot"
 #}}}
 
 # package manager {{{
-_alias II "sudo nala install"
-_alias RR "sudo nala purge"
-_alias UU "sudo nala update && sudo nala upgrade"
-_alias CC "sudo nala autoremove"
+_alias II "sudo pacman -S --needed"
+_alias RR "sudo pacman -Rns"
+_alias UU "sudo pacman -Syyu"
+_alias CC "sudo pacman -Sc"
 # }}}
 
 # exa {{{
@@ -70,48 +71,8 @@ alias l..="ls ../"
 
 alias ll="exa --grid --long --icons --all --group-directories-first"
 
-function lt
-    # 4 cases: num+path, num+nothing, path+nothing, nothing+nothing
-    set -l total_arg (count $argv)
-
-    if test $total_arg -eq 0
-        ls --tree --level=2
-        return 0
-    end
-
-    if test $total_arg -eq 1
-        if string match -qr '^[0-9]+$' $argv[1]
-            ls --tree --level=$argv[1]
-        else
-            ls --tree --level=2 $argv[1]
-        end
-        return 0
-    end
-
-    ls --tree --level=$argv[1] $argv[2]
-end
-
-function lt.
-    # 4 cases: num+path, num+nothing, path+nothing, nothing+nothing
-    set -l total_arg (count $argv)
-
-    if test $total_arg -eq 0
-        ls. --tree --level=2
-        return 0
-    end
-
-    if test $total_arg -eq 1
-        if string match -qr '^[0-9]+$' $argv[1]
-            ls. --tree --level=$argv[1]
-        else
-            ls. --tree --level=2 $argv[1]
-        end
-        return 0
-    end
-
-    ls. --tree --level=$argv[1] $argv[2]
-end
 # }}}
+alias d=docker
 
 # git {{{
 _alias g "git"
@@ -145,7 +106,6 @@ fish_default_key_bindings
 
 alias sv "sudo vim"
 alias screenoff "sleep 1 && xset dpms force off"
-alias icat "kitten icat"
 
 _alias ... "cd ../../"
 _alias .... "cd ../../../"
@@ -179,4 +139,16 @@ tmux kill-session -t $fish_pid; \
 tmux kill-session -t popup$fish_pid; \
 end &> /dev/null" SIGHUP
 # }}}
-source ~/.asdf/asdf.fish
+# rtx activate fish | source
+#pyenv init - | source
+
+# pnpm
+set -gx PNPM_HOME "/home/huy/.local/share/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end
+fish_hybrid_key_bindings
+export GEM_HOME="$HOME/.rvm/gems/ruby-3.3.1"
+export GEM_PATH="$HOME/.rvm/gems/ruby-3.3.1:$HOME/.rvm/gems/ruby-3.3.1@global"
+direnv hook fish | source
