@@ -5,6 +5,21 @@
 [user]
 	email = huyphmnhat@gmail.com
 	name = 012e
+[core]
+    pager = delta
+	autocrlf = input
+	protectNTFS = true
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true  # use n and N to move between diff sections
+    dark = true      # or light = true, or omit for auto-detection
+    side-by-side = true
+
+[merge]
+    conflictstyle = zdiff3
 [alias]
 	fixc = commit --ammend
 	lastc = log -1 HEAD --stat
@@ -15,3 +30,7 @@
 	d = diff
 [color]
 	ui = auto
+[fetch]
+	prune = true
+[submodule]
+	recurse = true
