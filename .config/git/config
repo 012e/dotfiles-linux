@@ -6,20 +6,20 @@
 	email = huyphmnhat@gmail.com
 	name = 012e
 [core]
-    pager = delta
+	pager = delta
 	autocrlf = input
 	protectNTFS = true
 
 [interactive]
-    diffFilter = delta --color-only
+	diffFilter = delta --color-only
 
 [delta]
-    navigate = true  # use n and N to move between diff sections
-    dark = true      # or light = true, or omit for auto-detection
-    side-by-side = true
+	navigate = true
+  dark = true    
 
 [merge]
-    conflictstyle = zdiff3
+	conflictStyle = zdiff3
+
 [alias]
 	fixc = commit --ammend
 	lastc = log -1 HEAD --stat
@@ -34,3 +34,18 @@
 	prune = true
 [submodule]
 	recurse = true
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate
+[rerere]
+	enabled = true
+[diff]
+	submodule = log
+[push]
+	recurseSubmodules = on-demand
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f

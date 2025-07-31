@@ -185,7 +185,7 @@ ignore_newline = no
 stack_duplicates = true
 
 # Hide the count of stacked notifications with the same content
-hide_duplicate_count = false
+hide_duplicate_count = true
 
 # Display indicators for URLs (U) and actions (A).
 show_indicators = yes
@@ -408,11 +408,7 @@ timeout = 0
 appname = progress_bar
 alignment = center
 highlight = "#eeeeee"
-
-[progess_bar_blocked]
-appname = progress_bar_blocked
-alignment = center
-highlight = "#cc241d"
+set_stack_tag = "volume"
 
 #[script-test]
 #    summary = "*script*"

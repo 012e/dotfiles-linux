@@ -19,7 +19,6 @@ keybind = alt+seven=unbind
 keybind = alt+eight=unbind
 keybind = alt+nine=unbind
 keybind = ctrl+comma=unbind
-keybind = shift+insert=unbind
 keybind = ctrl+page_down=unbind
 keybind = ctrl+alt+up=unbind
 keybind = ctrl+shift+a=unbind
@@ -57,7 +56,6 @@ keybind = ctrl+alt+down=unbind
 keybind = super+ctrl+shift+down=unbind
 keybind = super+ctrl+shift+right=unbind
 keybind = ctrl+plus=unbind
-keybind = ctrl+insert=unbind
 keybind = ctrl+shift+e=unbind
 keybind = ctrl+alt+right=unbind
 keybind = alt+f4=unbind

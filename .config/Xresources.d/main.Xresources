@@ -1,7 +1,10 @@
 st.font: Iosevka Nerd Font:pixelsize=20:antialias=true:autohint=true;
+!st.font: JetBrainsMono Nerd Font:style=Regular:pixelsize=19:antialias=true:autohint=true;
+!st.font: CaskaydiaCove Nerd Font:style=Regular:pixelsize=20:antialias=true:autohint=true;
+!st.font: FiraCode Nerd Font:style=Regular:pixelsize=20:antialias=true:autohint=true;
 st.alpha: 0.95
 st.alphaOffset: 0
 st.cursorColor: #FF1493
 
-! theme setup 
+! theme setup
 #include "./themes/kanagawa.Xresources"
