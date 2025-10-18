@@ -63,4 +63,4 @@ SETUVAR fish_pager_color_selected_background:\x1d
 SETUVAR fish_pager_color_selected_completion:\x1d
 SETUVAR fish_pager_color_selected_description:\x1d
 SETUVAR fish_pager_color_selected_prefix:\x1d
-SETUVAR fish_user_paths:/home/huy/\x2epyenv/bin\x1e/home/huy/bin\x1e/home/huy/\x2elocal/share/go/bin\x1e/home/huy/\x2enimble/bin\x1e/home/huy/\x2elocal/bin\x1e/home/huy/\x2ecargo/bin\x1e/home/huy/\x2elocal/share/coursier/bin\x1e/home/huy/\x2edetaspace/bin\x1e/home/huy/bin/apps\x1e/home/huy/\x2elocal/share/gem/ruby/3\x2e0\x2e0/bin\x1e/home/huy/\x2ervm/bin\x1e/home/huy/\x2elocal/share/bob/nvim\x2dbin\x1e/home/huy/\x2edotnet/tools
+SETUVAR fish_user_paths:/home/huy/\x2epyenv/bin\x1e/home/huy/bin\x1e/home/huy/\x2elocal/share/go/bin\x1e/home/huy/\x2enimble/bin\x1e/home/huy/\x2elocal/bin\x1e/home/huy/\x2ecargo/bin\x1e/home/huy/\x2elocal/share/coursier/bin\x1e/home/huy/\x2edetaspace/bin\x1e/home/huy/bin/apps\x1e/home/huy/\x2elocal/share/gem/ruby/3\x2e0\x2e0/bin\x1e/home/huy/\x2ervm/bin\x1e/home/huy/\x2elocal/share/bob/nvim\x2dbin\x1e/home/huy/\x2edotnet/tools\x1e/home/huy/\x2econfig/herd\x2dlite/bin

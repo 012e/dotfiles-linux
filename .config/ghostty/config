@@ -2,11 +2,12 @@ font-family = "Iosevka Nerd Font"
 font-size = 15
 cursor-color = ff1493
 cursor-text = 00EB6C
-theme = catppuccin-mocha
+theme = Catppuccin Mocha
 background-opacity = 0.95
 scrollback-limit = 3000
 window-decoration = false
 confirm-close-surface = false
+
 
 keybind = ctrl+tab=unbind
 keybind = alt+one=unbind
@@ -22,7 +23,6 @@ keybind = ctrl+comma=unbind
 keybind = ctrl+page_down=unbind
 keybind = ctrl+alt+up=unbind
 keybind = ctrl+shift+a=unbind
-keybind = super+ctrl+shift+plus=unbind
 keybind = shift+up=unbind
 keybind = super+ctrl+right_bracket=unbind
 keybind = ctrl+equal=unbind
@@ -55,7 +55,6 @@ keybind = ctrl+shift+tab=unbind
 keybind = ctrl+alt+down=unbind
 keybind = super+ctrl+shift+down=unbind
 keybind = super+ctrl+shift+right=unbind
-keybind = ctrl+plus=unbind
 keybind = ctrl+shift+e=unbind
 keybind = ctrl+alt+right=unbind
 keybind = alt+f4=unbind
@@ -63,3 +62,6 @@ keybind = ctrl+shift+enter=unbind
 keybind = shift+home=unbind
 keybind = super+ctrl+left_bracket=unbind
 keybind = ctrl+shift+i=unbind
+
+keybind = ctrl+equal=increase_font_size:0.5
+keybind = ctrl+shift+equal=reset_font_size
