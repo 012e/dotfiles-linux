@@ -1,5 +1,5 @@
 function lt.
-    alias ls="exa --classify --long	--grid --icons --grid \
+    alias ls="eza --classify --long	--grid --icons --grid \
         --no-permissions --no-user --group-directories-first"
     # 4 cases: num+path, num+nothing, path+nothing, nothing+nothing
     set -l total_arg (count $argv)

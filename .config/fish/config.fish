@@ -16,6 +16,7 @@ _env_var  PROJECT_PATH               ".huyproject"
 _env_var  XDG_DOWNLOAD_DIR           "$HOME/down"                                                   
 _env_var _JAVA_AWT_WM_NONREPARENTING 1
 _env_var GEM_HOME                    "$HOME/.local/share/gem"
+export TERM=xterm-256color
 # set -U Z_AFTER 'clear && echo $PWD && ls'
 # }}}
 
@@ -59,7 +60,7 @@ _alias CC "sudo pacman -Sc"
 
 # exa {{{
 # not using abbr (_alias) because it's simply too long, doesn't like it
-alias ls="exa --classify --long	--grid --icons --grid \
+alias ls="eza --classify --long	--grid --icons --grid \
 	--no-permissions --no-user --group-directories-first"
 alias l="ls"
 
@@ -69,7 +70,7 @@ alias l.="ls"
 alias ls..="ls ../"
 alias l..="ls ../"
 
-alias ll="exa --grid --long --icons --all --group-directories-first"
+alias ll="eza --grid --long --icons --all --group-directories-first"
 
 # }}}
 alias d=docker
@@ -94,6 +95,8 @@ alias gb git_smart_checkout
 
 
 alias conf='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+# AI aliases
+_alias aicode "wt switch --create --execute=opencode"
 # }}}
 
 # starship init fish | source
@@ -109,22 +112,22 @@ alias screenoff "sleep 1 && xset dpms force off"
 
 _alias ... "cd ../../"
 _alias .... "cd ../../../"
-alias rm "trash-put"
+alias trm "trash-put"
 
 
 ## needed for st terminal
-trap "begin \
-tmux kill-session $fish_pid; \
-tmux kill-session -t $fish_pid; \
-tmux kill-session -t popup$fish_pid; \
-end &> /dev/null" EXIT
+# trap "begin \
+# tmux kill-session $fish_pid; \
+# tmux kill-session -t $fish_pid; \
+# tmux kill-session -t popup$fish_pid; \
+# end &> /dev/null" EXIT
 
 # needed for foot terminal
-trap "begin \
-tmux kill-session $fish_pid; \
-tmux kill-session -t $fish_pid; \
-tmux kill-session -t popup$fish_pid; \
-end &> /dev/null" SIGTERM
+# trap "begin \
+# tmux kill-session $fish_pid; \
+# tmux kill-session -t $fish_pid; \
+# tmux kill-session -t popup$fish_pid; \
+# end &> /dev/null" SIGTERM
 
 # trap "begin \
 # tmux kill-session $fish_pid; \
@@ -133,11 +136,11 @@ end &> /dev/null" SIGTERM
 # end &> /dev/null" SIGKILL
 # 
 # # needed for kitty, foot terminal
-trap "begin \
-tmux kill-session $fish_pid; \
-tmux kill-session -t $fish_pid; \
-tmux kill-session -t popup$fish_pid; \
-end &> /dev/null" SIGHUP
+# trap "begin \
+# tmux kill-session $fish_pid; \
+# tmux kill-session -t $fish_pid; \
+# tmux kill-session -t popup$fish_pid; \
+# end &> /dev/null" SIGHUP
 # }}}
 # rtx activate fish | source
 #pyenv init - | source
@@ -152,3 +155,8 @@ fish_hybrid_key_bindings
 export GEM_HOME="$HOME/.rvm/gems/ruby-3.3.1"
 export GEM_PATH="$HOME/.rvm/gems/ruby-3.3.1:$HOME/.rvm/gems/ruby-3.3.1@global"
 direnv hook fish | source
+
+# Added by get-aspire-cli.sh
+fish_add_path $HOME/.aspire/bin
+set -gx VOLTA_HOME "$HOME/.volta"
+set -gx PATH "$VOLTA_HOME/bin" $PATH
