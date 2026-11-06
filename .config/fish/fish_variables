@@ -1,5 +1,7 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR OPENCODE_EXPERIMENTAL_OXFMT:TRUE
+SETUVAR OPENCODE_EXPERIMENTAL_WEBSOCKETS:TRUE
 SETUVAR --export PYENV_ROOT:/home/huy/\x2epyenv
 SETUVAR ZO_CMD:zo
 SETUVAR Z_AFTER:clear\x20\x26\x26\x20echo\x20\x24PWD\x20\x26\x26\x20ls
@@ -15,4 +17,4 @@ SETUVAR _fisher_jorgebucaran_2F_fisher_files:\x7e/\x2econfig/fish/functions/fish
 SETUVAR _fisher_patrickf1_2F_fzf_2E_fish_files:\x7e/\x2econfig/fish/functions/_fzf_configure_bindings_help\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_extract_var_info\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_preview_changed_file\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_preview_file\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_report_diff_type\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_report_file_type\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_search_directory\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_search_git_log\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_search_git_status\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_search_history\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_search_processes\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_search_variables\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_wrapper\x2efish\x1e\x7e/\x2econfig/fish/functions/fzf_configure_bindings\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/fzf\x2efish\x1e\x7e/\x2econfig/fish/completions/fzf_configure_bindings\x2efish
 SETUVAR _fisher_plugins:jorgebucaran/fisher\x1e012e/z\x1epatrickf1/fzf\x2efish\x1ejhillyerd/plugin\x2dgit\x1edanhper/fish\x2dssh\x2dagent
 SETUVAR _fisher_upgraded_to_4_4:\x1d
-SETUVAR fish_user_paths:/home/huy/\x2easpire/bin\x1e/home/huy/\x2epyenv/bin\x1e/home/huy/bin\x1e/home/huy/\x2elocal/share/go/bin\x1e/home/huy/\x2enimble/bin\x1e/home/huy/\x2elocal/bin\x1e/home/huy/\x2ecargo/bin\x1e/home/huy/\x2elocal/share/coursier/bin\x1e/home/huy/\x2edetaspace/bin\x1e/home/huy/bin/apps\x1e/home/huy/\x2elocal/share/gem/ruby/3\x2e0\x2e0/bin\x1e/home/huy/\x2ervm/bin\x1e/home/huy/\x2elocal/share/bob/nvim\x2dbin\x1e/home/huy/\x2edotnet/tools\x1e/home/huy/\x2econfig/herd\x2dlite/bin
+SETUVAR fish_user_paths:/home/huy/\x2eopencode/bin\x1e/home/huy/\x2easpire/bin\x1e/home/huy/\x2epyenv/bin\x1e/home/huy/bin\x1e/home/huy/\x2elocal/share/go/bin\x1e/home/huy/\x2enimble/bin\x1e/home/huy/\x2elocal/bin\x1e/home/huy/\x2ecargo/bin\x1e/home/huy/\x2elocal/share/coursier/bin\x1e/home/huy/\x2edetaspace/bin\x1e/home/huy/bin/apps\x1e/home/huy/\x2elocal/share/gem/ruby/3\x2e0\x2e0/bin\x1e/home/huy/\x2ervm/bin\x1e/home/huy/\x2elocal/share/bob/nvim\x2dbin\x1e/home/huy/\x2edotnet/tools\x1e/home/huy/\x2econfig/herd\x2dlite/bin

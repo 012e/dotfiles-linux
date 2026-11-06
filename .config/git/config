@@ -17,6 +17,7 @@
 	navigate = true
 	dark = true
 	syntax-theme = Catppuccin Mocha
+	side-by-side = false
 
 [merge]
 	conflictStyle = zdiff3
@@ -47,8 +48,5 @@
 [push]
 	recurseSubmodules = on-demand
 	autoSetupRemote = true
-[filter "lfs"]
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
+[rebase]
+	autoStash = true

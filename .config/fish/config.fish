@@ -94,7 +94,7 @@ _alias gd "git diff"
 alias gb git_smart_checkout
 
 
-alias conf='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+alias conf='yadm'
 # AI aliases
 _alias aicode "wt switch --create --execute=opencode"
 # }}}
@@ -160,3 +160,14 @@ direnv hook fish | source
 fish_add_path $HOME/.aspire/bin
 set -gx VOLTA_HOME "$HOME/.volta"
 set -gx PATH "$VOLTA_HOME/bin" $PATH
+
+# opencode
+fish_add_path /home/huy/.opencode/bin
+
+# Added by GitButler installer
+fish_add_path $HOME/.local/bin
+but completions fish | source
+
+
+# Added by Antigravity CLI installer
+set -gx PATH "/home/huy/.local/bin" $PATH
