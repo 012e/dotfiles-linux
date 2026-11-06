@@ -158,8 +158,7 @@ direnv hook fish | source
 
 # Added by get-aspire-cli.sh
 fish_add_path $HOME/.aspire/bin
-set -gx VOLTA_HOME "$HOME/.volta"
-set -gx PATH "$VOLTA_HOME/bin" $PATH
+mise activate fish | source
 
 # opencode
 fish_add_path /home/huy/.opencode/bin
